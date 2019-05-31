@@ -1,0 +1,109 @@
+﻿.ax_default {
+  font-family:'微软雅黑';
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  letter-spacing:normal;
+  color:#333333;
+  vertical-align:none;
+  text-align:center;
+  line-height:normal;
+  text-transform:none;
+}
+.image {
+}
+.heading_1 {
+  font-family:'微软雅黑';
+  font-weight:bold;
+  font-style:normal;
+  font-size:32px;
+  text-align:left;
+}
+.icon {
+}
+.heading_2 {
+  font-family:'微软雅黑';
+  font-weight:bold;
+  font-style:normal;
+  font-size:24px;
+  text-align:left;
+}
+.heading_3 {
+  font-family:'微软雅黑';
+  font-weight:bold;
+  font-style:normal;
+  font-size:18px;
+  text-align:left;
+}
+.heading_4 {
+  font-family:'微软雅黑';
+  font-weight:bold;
+  font-style:normal;
+  font-size:14px;
+  text-align:left;
+}
+.heading_5 {
+  font-family:'微软雅黑';
+  font-weight:bold;
+  font-style:normal;
+  text-align:left;
+}
+.heading_6 {
+  font-family:'微软雅黑';
+  font-weight:bold;
+  font-style:normal;
+  font-size:10px;
+  text-align:left;
+}
+.paragraph {
+  text-align:left;
+}
+.form_hint {
+  color:#999999;
+}
+.form_disabled {
+}
+._表单提示 {
+  color:#999999;
+}
+._表单禁用 {
+}
+.flow_shape {
+}
+._默认样式 {
+}
+.box_1 {
+}
+.primary_button {
+  color:#FFFFFF;
+}
+._流程形状 {
+}
+.label {
+  font-size:14px;
+  text-align:left;
+}
+.line {
+}
+.text_field {
+  color:#000000;
+  text-align:left;
+}
+.droplist {
+  color:#666666;
+  text-align:left;
+}
+.checkbox {
+  text-align:left;
+}
+.box_2 {
+}
+.ellipse {
+}
+.example_script {
+  font-family:'Courier New Normal', 'Courier New';
+  font-weight:400;
+  font-style:normal;
+  font-size:11px;
+}
+textarea, select, input, button { outline: none; }

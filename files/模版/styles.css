@@ -1,0 +1,131 @@
+﻿body {
+  margin:0px;
+  background-color:rgba(215, 215, 215, 1);
+  background-image:none;
+  position:relative;
+  left:0px;
+  width:1068px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+}
+.form_sketch {
+  border-color:transparent;
+  background-color:transparent;
+}
+#base {
+  position:absolute;
+  z-index:0;
+}
+.u517_div {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:340px;
+  height:346px;
+  background:inherit;
+  background-color:rgba(242, 242, 242, 1);
+  border:none;
+  border-radius:5px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:16px;
+  text-align:left;
+}
+.u517 {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:340px;
+  height:346px;
+  display:flex;
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:16px;
+  text-align:left;
+}
+.u517 .text {
+  position:absolute;
+  align-self:flex-start;
+  padding:15px 2px 2px 20px;
+  box-sizing:border-box;
+  width:100%;
+}
+.u517_text {
+  border-width:0px;
+  word-wrap:break-word;
+  text-transform:none;
+}
+.u518_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:280px;
+  height:216px;
+}
+.u518 {
+  border-width:0px;
+  position:absolute;
+  left:23px;
+  top:47px;
+  width:280px;
+  height:216px;
+  display:flex;
+}
+.u518 .text {
+  position:absolute;
+  align-self:center;
+  padding:2px 2px 2px 2px;
+  box-sizing:border-box;
+  width:100%;
+}
+.u518_text {
+  border-width:0px;
+  word-wrap:break-word;
+  text-transform:none;
+  visibility:hidden;
+}
+#u516-1 {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:340px;
+  height:346px;
+}
+#u516-2 {
+  border-width:0px;
+  position:absolute;
+  left:364px;
+  top:0px;
+  width:340px;
+  height:346px;
+}
+#u516-3 {
+  border-width:0px;
+  position:absolute;
+  left:728px;
+  top:0px;
+  width:340px;
+  height:346px;
+}
+#u516 {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:62px;
+  width:1068px;
+  height:346px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+}
