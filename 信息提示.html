@@ -1,0 +1,1302 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>信息提示</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/信息提示/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" type="text/css" rel="stylesheet"/>
+    <style type="text/css">
+@font-face {
+//}</style>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d43011c1f3845cf186551b49c3938bd7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css">{
+}
+    </style>
+    <style type="text/css">
+@font-face {
+//}</style><script type="text/javascript">
+
+window.open = window.open;
+window.open = function () {
+  "use strict";
+  function initialize() {
+    if (window.$) {
+      $(document).ready(function () {
+       setTimeout(function () {window.open('javascript:');}, 0);
+      });
+     } else {
+      setTimeout(initialize, 0);
+     }
+  }
+  setTimeout(initialize, 0);
+  if (typeof String.prototype.trim !== "function") {
+    String.prototype.trim = function () {
+      return this.replace(/^\s+|\s+$/g, "");
+    };
+  }
+  var _open = window.open;
+  var __open = function(url, a, b, c) {
+      if (c !== undefined) return _open(url, a, b, c);
+      if (b !== undefined) return _open(url, a, b);
+      if (a !== undefined) return _open(url, a);
+      return _open(url);
+  };
+  return function (url, a, b, c) {
+    if ((url.substring(0, 11) !== "javascript:") || (!$axure)) {
+      if (window.openReplace) {
+        window.openReplace = false;
+        window.location.replace(url);
+        return false;
+      }
+      return __open(url, a, b, c);
+    }
+    if (!$axure.error) {
+      var ignoreError;
+      $axure.error = function (msg) {
+         if (console) console.log(msg);
+        if (!ignoreError) ignoreError = !confirm(msg);
+        return false;
+      };
+      $axure.internal(function ($ax) {
+        $axure.debug = $ax.globalVariableProvider.getVariableValue('Debug') !== '';
+      });
+      if (window.AxureExInitialize) window.AxureExInitialize();
+    }
+    var script = url.substring(11).trim();
+    if (false && console) console.log("** " + script + " **\n");
+    if ((script[0] === '/') && (script[1] === '/')) return false;
+    if ((script[0] == '@') || (script[0] == '#')) {
+     
+      var src = script.split(":");
+      script = $axure(src[0].trim()).text();
+      if (!script) return $axure.error('Widget "' + src[0] + '" not found.');
+      
+        var l = script.split(':');
+        script = script.replace("[[" + l[0].trim() + "]]", JSON.stringify(l.slice(1).join(':')).slice(1, -1).replace("'", "\\'"));
+     
+      if (src.length > 1) {
+        var frame = $axure(src[1].trim()).$().children("iframe")[0];
+        if (!frame) return $axure.error('Widget InlineFrame "' + src[1] + '" not found.');
+        frame = (frame.contentWindow ? frame.contentWindow : frame.contentDocument.document ? frame.contentDocument.document : frame.contentDocument).document;
+        frame.open("text/html", "replace");
+        frame.write(script);
+        frame.close();
+        return false;
+      }
+    }
+    if (script !== '') {
+      if ($axure.debug) script = eval(script);
+      else try {
+        script = eval(script);
+      } catch (err) {
+        return $axure.error("Exception:\n" + err + "\n\nTrace:\n" + err.stack + "\n\nScript:\n" + script.slice(0, 1024));
+      }
+      if (script) return __open('javascript: ' + JSON.stringify(script) + ';', a, b, c);
+    }
+    return false;
+  };
+}();
+
+//</script><style type="text/css">{
+}
+    </style>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/信息提示/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (Group) -->
+      <div id="u197" class="ax_default" data-left="700" data-top="100" data-width="500" data-height="756">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u198" class="ax_default box_1">
+          <div id="u198_div" class=""></div>
+          <div id="u198_text" class="text ">
+            <p><span style="text-decoration:none;">基本用法</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u199" class="ax_default box_1">
+          <div id="u199_div" class=""></div>
+          <div id="u199_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u200" class="ax_default" data-left="100" data-top="100" data-width="500" data-height="756">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u201" class="ax_default box_1">
+          <div id="u201_div" class=""></div>
+          <div id="u201_text" class="text ">
+            <p><span style="text-decoration:none;">组件样式</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u202" class="ax_default box_1">
+          <div id="u202_div" class=""></div>
+          <div id="u202_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (面包屑标题) -->
+
+      <!-- Unnamed (Dynamic Panel) -->
+      <div id="u204" class="ax_default">
+        <div id="u204_state0" class="panel_state" data-label="State1" style="">
+          <div id="u204_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u205" class="ax_default box_1">
+              <div id="u205_div" class=""></div>
+              <div id="u205_text" class="text ">
+                <p><span style="text-decoration:none;">标题名称</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="u203" style="display:none; visibility:hidden;"></div>
+
+      <!-- 成功消息组合 (Group) -->
+      <div id="u206" class="ax_default" data-label="成功消息组合" data-left="0" data-top="0" data-width="0" data-height="0">
+      </div>
+
+      <!-- 信息反馈 (Repeater) -->
+      <div id="u207" class="ax_default" data-label="信息反馈">
+        <script id="u207_script" type="axure-repeater-template" data-label="信息反馈">
+
+          <!-- Unnamed (Group) -->
+          <div id="u208" class="ax_default u208" data-left="0" data-top="0" data-width="430" data-height="90">
+
+            <!-- message (Dynamic Panel) -->
+            <div id="u209" class="ax_default u209" data-label="message">
+              <div id="u209_state0" class="panel_state u209_state0" data-label="成功" style="">
+                <div id="u209_state0_content" class="panel_state_content u209_state0_content">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u210" class="ax_default box_2 u210">
+                    <div id="u210_div" class="u210_div"></div>
+                    <div id="u210_text" class="text u210_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u211" class="ax_default box_2 u211">
+                    <div id="u211_div" class="u211_div"></div>
+                    <div id="u211_text" class="text u211_text">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209_state1" class="panel_state u209_state1" data-label="警告" style="visibility: hidden;">
+                <div id="u209_state1_content" class="panel_state_content u209_state1_content">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u212" class="ax_default box_2 u212">
+                    <div id="u212_div" class="u212_div"></div>
+                    <div id="u212_text" class="text u212_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u213" class="ax_default box_2 u213">
+                    <div id="u213_div" class="u213_div"></div>
+                    <div id="u213_text" class="text u213_text">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209_state2" class="panel_state u209_state2" data-label="错误" style="visibility: hidden;">
+                <div id="u209_state2_content" class="panel_state_content u209_state2_content">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u214" class="ax_default box_2 u214">
+                    <div id="u214_div" class="u214_div"></div>
+                    <div id="u214_text" class="text u214_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u215" class="ax_default box_2 u215">
+                    <div id="u215_div" class="u215_div"></div>
+                    <div id="u215_text" class="text u215_text">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209_state3" class="panel_state u209_state3" data-label="提示" style="visibility: hidden;">
+                <div id="u209_state3_content" class="panel_state_content u209_state3_content">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u216" class="ax_default box_2 u216">
+                    <div id="u216_div" class="u216_div"></div>
+                    <div id="u216_text" class="text u216_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u217" class="ax_default box_2 u217">
+                    <div id="u217_div" class="u217_div"></div>
+                    <div id="u217_text" class="text u217_text">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209_state4" class="panel_state u209_state4" data-label="帮助" style="visibility: hidden;">
+                <div id="u209_state4_content" class="panel_state_content u209_state4_content">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u218" class="ax_default box_2 u218">
+                    <div id="u218_div" class="u218_div"></div>
+                    <div id="u218_text" class="text u218_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u219" class="ax_default box_2 u219">
+                    <div id="u219_div" class="u219_div"></div>
+                    <div id="u219_text" class="text u219_text">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209_state5" class="panel_state u209_state5" data-label="进行中" style="visibility: hidden;">
+                <div id="u209_state5_content" class="panel_state_content u209_state5_content">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u220" class="ax_default box_2 u220">
+                    <div id="u220_div" class="u220_div"></div>
+                    <div id="u220_text" class="text u220_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (SVG) -->
+                  <div id="u221" class="ax_default image u221">
+                    <img id="u221_img" class="img u221_img" src="images/信息提示/u221.svg"/>
+                    <div id="u221_text" class="text u221_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- title (Rectangle) -->
+            <div id="u222" class="ax_default box_2 u222" data-label="title">
+              <div id="u222_div" class="u222_div"></div>
+              <div id="u222_text" class="text u222_text">
+                <p><span style="text-decoration:none;">Title</span></p>
+              </div>
+            </div>
+
+            <!-- text (Rectangle) -->
+            <div id="u223" class="ax_default label u223" data-label="text">
+              <div id="u223_div" class="u223_div"></div>
+              <div id="u223_text" class="text u223_text">
+                <p><span style="text-decoration:none;">详情信息</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u224" class="ax_default box_2 u224">
+              <div id="u224_div" class="u224_div"></div>
+              <div id="u224_text" class="text u224_text">
+                <p><span style="text-decoration:none;"></span></p>
+              </div>
+            </div>
+          </div>
+        </script>
+        <div id="u207-1" class="" style="width: 430px; height: 90px;">
+
+          <!-- Unnamed (Group) -->
+          <div id="u208-1" class="ax_default u208" style="visibility: inherit" data-left="0" data-top="0" data-width="430" data-height="90">
+
+            <!-- message (Dynamic Panel) -->
+            <div id="u209-1" class="ax_default u209" data-label="message" style="visibility: inherit">
+              <div id="u209-1_state0" class="panel_state u209_state0" data-label="成功" style=" width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-1_state0_content" class="panel_state_content u209_state0_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u210-1" class="ax_default box_2 u210" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u210-1_div" class="u210_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u210-1_text" class="text u210_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u211-1" class="ax_default box_2 u211" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u211-1_div" class="u211_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u211-1_text" class="text u211_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-1_state1" class="panel_state u209_state1" data-label="警告" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-1_state1_content" class="panel_state_content u209_state1_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u212-1" class="ax_default box_2 u212" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u212-1_div" class="u212_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u212-1_text" class="text u212_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u213-1" class="ax_default box_2 u213" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u213-1_div" class="u213_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u213-1_text" class="text u213_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-1_state2" class="panel_state u209_state2" data-label="错误" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-1_state2_content" class="panel_state_content u209_state2_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u214-1" class="ax_default box_2 u214" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u214-1_div" class="u214_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u214-1_text" class="text u214_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u215-1" class="ax_default box_2 u215" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u215-1_div" class="u215_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u215-1_text" class="text u215_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-1_state3" class="panel_state u209_state3" data-label="提示" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-1_state3_content" class="panel_state_content u209_state3_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u216-1" class="ax_default box_2 u216" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u216-1_div" class="u216_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u216-1_text" class="text u216_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u217-1" class="ax_default box_2 u217" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u217-1_div" class="u217_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u217-1_text" class="text u217_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-1_state4" class="panel_state u209_state4" data-label="帮助" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-1_state4_content" class="panel_state_content u209_state4_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u218-1" class="ax_default box_2 u218" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u218-1_div" class="u218_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u218-1_text" class="text u218_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u219-1" class="ax_default box_2 u219" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u219-1_div" class="u219_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u219-1_text" class="text u219_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-1_state5" class="panel_state u209_state5" data-label="进行中" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-1_state5_content" class="panel_state_content u209_state5_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u220-1" class="ax_default box_2 u220" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u220-1_div" class="u220_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u220-1_text" class="text u220_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (SVG) -->
+                  <div id="u221-1" class="ax_default image u221" style="width: 60px; height: 60px; left: 0px; top: 0px;visibility: inherit">
+                    <img id="u221-1_img" class="img u221_img" src="images/信息提示/u221.svg"/>
+                    <div id="u221-1_text" class="text u221_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- title (Rectangle) -->
+            <div id="u222-1" class="ax_default box_2 u222" data-label="title" style="width: 284px; height: 49px; left: 73px; top: 0px;visibility: inherit">
+              <div id="u222-1_div" class="u222_div" style="width: 284px; height: 49px;visibility: inherit"></div>
+              <div id="u222-1_text" class="text u222_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">Title</span></p>
+              </div>
+            </div>
+
+            <!-- text (Rectangle) -->
+            <div id="u223-1" class="ax_default label u223" data-label="text" style="width: 337px; height: 19px; left: 73px; top: 59px;visibility: inherit">
+              <div id="u223-1_div" class="u223_div" style="width: 337px; height: 19px;visibility: inherit"></div>
+              <div id="u223-1_text" class="text u223_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">详情信息</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u224-1" class="ax_default box_2 u224" style="width: 73px; height: 49px; left: 357px; top: 0px;visibility: inherit">
+              <div id="u224-1_div" class="u224_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+              <div id="u224-1_text" class="text u224_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u207-2" class="" style="width: 430px; height: 90px;">
+
+          <!-- Unnamed (Group) -->
+          <div id="u208-2" class="ax_default u208" style="visibility: inherit" data-left="0" data-top="0" data-width="430" data-height="90">
+
+            <!-- message (Dynamic Panel) -->
+            <div id="u209-2" class="ax_default u209" data-label="message" style="visibility: inherit">
+              <div id="u209-2_state0" class="panel_state u209_state0" data-label="成功" style=" width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-2_state0_content" class="panel_state_content u209_state0_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u210-2" class="ax_default box_2 u210" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u210-2_div" class="u210_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u210-2_text" class="text u210_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u211-2" class="ax_default box_2 u211" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u211-2_div" class="u211_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u211-2_text" class="text u211_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-2_state1" class="panel_state u209_state1" data-label="警告" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-2_state1_content" class="panel_state_content u209_state1_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u212-2" class="ax_default box_2 u212" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u212-2_div" class="u212_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u212-2_text" class="text u212_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u213-2" class="ax_default box_2 u213" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u213-2_div" class="u213_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u213-2_text" class="text u213_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-2_state2" class="panel_state u209_state2" data-label="错误" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-2_state2_content" class="panel_state_content u209_state2_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u214-2" class="ax_default box_2 u214" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u214-2_div" class="u214_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u214-2_text" class="text u214_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u215-2" class="ax_default box_2 u215" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u215-2_div" class="u215_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u215-2_text" class="text u215_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-2_state3" class="panel_state u209_state3" data-label="提示" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-2_state3_content" class="panel_state_content u209_state3_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u216-2" class="ax_default box_2 u216" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u216-2_div" class="u216_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u216-2_text" class="text u216_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u217-2" class="ax_default box_2 u217" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u217-2_div" class="u217_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u217-2_text" class="text u217_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-2_state4" class="panel_state u209_state4" data-label="帮助" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-2_state4_content" class="panel_state_content u209_state4_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u218-2" class="ax_default box_2 u218" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u218-2_div" class="u218_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u218-2_text" class="text u218_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u219-2" class="ax_default box_2 u219" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u219-2_div" class="u219_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u219-2_text" class="text u219_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-2_state5" class="panel_state u209_state5" data-label="进行中" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-2_state5_content" class="panel_state_content u209_state5_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u220-2" class="ax_default box_2 u220" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u220-2_div" class="u220_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u220-2_text" class="text u220_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (SVG) -->
+                  <div id="u221-2" class="ax_default image u221" style="width: 60px; height: 60px; left: 0px; top: 0px;visibility: inherit">
+                    <img id="u221-2_img" class="img u221_img" src="images/信息提示/u221.svg"/>
+                    <div id="u221-2_text" class="text u221_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- title (Rectangle) -->
+            <div id="u222-2" class="ax_default box_2 u222" data-label="title" style="width: 284px; height: 49px; left: 73px; top: 0px;visibility: inherit">
+              <div id="u222-2_div" class="u222_div" style="width: 284px; height: 49px;visibility: inherit"></div>
+              <div id="u222-2_text" class="text u222_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">Title</span></p>
+              </div>
+            </div>
+
+            <!-- text (Rectangle) -->
+            <div id="u223-2" class="ax_default label u223" data-label="text" style="width: 337px; height: 19px; left: 73px; top: 59px;visibility: inherit">
+              <div id="u223-2_div" class="u223_div" style="width: 337px; height: 19px;visibility: inherit"></div>
+              <div id="u223-2_text" class="text u223_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">详情信息</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u224-2" class="ax_default box_2 u224" style="width: 73px; height: 49px; left: 357px; top: 0px;visibility: inherit">
+              <div id="u224-2_div" class="u224_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+              <div id="u224-2_text" class="text u224_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u207-3" class="" style="width: 430px; height: 90px;">
+
+          <!-- Unnamed (Group) -->
+          <div id="u208-3" class="ax_default u208" style="visibility: inherit" data-left="0" data-top="0" data-width="430" data-height="90">
+
+            <!-- message (Dynamic Panel) -->
+            <div id="u209-3" class="ax_default u209" data-label="message" style="visibility: inherit">
+              <div id="u209-3_state0" class="panel_state u209_state0" data-label="成功" style=" width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-3_state0_content" class="panel_state_content u209_state0_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u210-3" class="ax_default box_2 u210" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u210-3_div" class="u210_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u210-3_text" class="text u210_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u211-3" class="ax_default box_2 u211" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u211-3_div" class="u211_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u211-3_text" class="text u211_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-3_state1" class="panel_state u209_state1" data-label="警告" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-3_state1_content" class="panel_state_content u209_state1_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u212-3" class="ax_default box_2 u212" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u212-3_div" class="u212_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u212-3_text" class="text u212_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u213-3" class="ax_default box_2 u213" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u213-3_div" class="u213_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u213-3_text" class="text u213_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-3_state2" class="panel_state u209_state2" data-label="错误" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-3_state2_content" class="panel_state_content u209_state2_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u214-3" class="ax_default box_2 u214" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u214-3_div" class="u214_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u214-3_text" class="text u214_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u215-3" class="ax_default box_2 u215" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u215-3_div" class="u215_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u215-3_text" class="text u215_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-3_state3" class="panel_state u209_state3" data-label="提示" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-3_state3_content" class="panel_state_content u209_state3_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u216-3" class="ax_default box_2 u216" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u216-3_div" class="u216_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u216-3_text" class="text u216_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u217-3" class="ax_default box_2 u217" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u217-3_div" class="u217_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u217-3_text" class="text u217_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-3_state4" class="panel_state u209_state4" data-label="帮助" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-3_state4_content" class="panel_state_content u209_state4_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u218-3" class="ax_default box_2 u218" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u218-3_div" class="u218_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u218-3_text" class="text u218_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u219-3" class="ax_default box_2 u219" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u219-3_div" class="u219_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u219-3_text" class="text u219_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-3_state5" class="panel_state u209_state5" data-label="进行中" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-3_state5_content" class="panel_state_content u209_state5_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u220-3" class="ax_default box_2 u220" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u220-3_div" class="u220_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u220-3_text" class="text u220_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (SVG) -->
+                  <div id="u221-3" class="ax_default image u221" style="width: 60px; height: 60px; left: 0px; top: 0px;visibility: inherit">
+                    <img id="u221-3_img" class="img u221_img" src="images/信息提示/u221.svg"/>
+                    <div id="u221-3_text" class="text u221_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- title (Rectangle) -->
+            <div id="u222-3" class="ax_default box_2 u222" data-label="title" style="width: 284px; height: 49px; left: 73px; top: 0px;visibility: inherit">
+              <div id="u222-3_div" class="u222_div" style="width: 284px; height: 49px;visibility: inherit"></div>
+              <div id="u222-3_text" class="text u222_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">Title</span></p>
+              </div>
+            </div>
+
+            <!-- text (Rectangle) -->
+            <div id="u223-3" class="ax_default label u223" data-label="text" style="width: 337px; height: 19px; left: 73px; top: 59px;visibility: inherit">
+              <div id="u223-3_div" class="u223_div" style="width: 337px; height: 19px;visibility: inherit"></div>
+              <div id="u223-3_text" class="text u223_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">详情信息</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u224-3" class="ax_default box_2 u224" style="width: 73px; height: 49px; left: 357px; top: 0px;visibility: inherit">
+              <div id="u224-3_div" class="u224_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+              <div id="u224-3_text" class="text u224_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u207-4" class="" style="width: 430px; height: 90px;">
+
+          <!-- Unnamed (Group) -->
+          <div id="u208-4" class="ax_default u208" style="visibility: inherit" data-left="0" data-top="0" data-width="430" data-height="90">
+
+            <!-- message (Dynamic Panel) -->
+            <div id="u209-4" class="ax_default u209" data-label="message" style="visibility: inherit">
+              <div id="u209-4_state0" class="panel_state u209_state0" data-label="成功" style=" width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-4_state0_content" class="panel_state_content u209_state0_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u210-4" class="ax_default box_2 u210" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u210-4_div" class="u210_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u210-4_text" class="text u210_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u211-4" class="ax_default box_2 u211" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u211-4_div" class="u211_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u211-4_text" class="text u211_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-4_state1" class="panel_state u209_state1" data-label="警告" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-4_state1_content" class="panel_state_content u209_state1_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u212-4" class="ax_default box_2 u212" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u212-4_div" class="u212_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u212-4_text" class="text u212_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u213-4" class="ax_default box_2 u213" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u213-4_div" class="u213_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u213-4_text" class="text u213_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-4_state2" class="panel_state u209_state2" data-label="错误" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-4_state2_content" class="panel_state_content u209_state2_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u214-4" class="ax_default box_2 u214" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u214-4_div" class="u214_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u214-4_text" class="text u214_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u215-4" class="ax_default box_2 u215" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u215-4_div" class="u215_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u215-4_text" class="text u215_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-4_state3" class="panel_state u209_state3" data-label="提示" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-4_state3_content" class="panel_state_content u209_state3_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u216-4" class="ax_default box_2 u216" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u216-4_div" class="u216_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u216-4_text" class="text u216_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u217-4" class="ax_default box_2 u217" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u217-4_div" class="u217_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u217-4_text" class="text u217_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-4_state4" class="panel_state u209_state4" data-label="帮助" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-4_state4_content" class="panel_state_content u209_state4_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u218-4" class="ax_default box_2 u218" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u218-4_div" class="u218_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u218-4_text" class="text u218_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u219-4" class="ax_default box_2 u219" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u219-4_div" class="u219_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u219-4_text" class="text u219_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-4_state5" class="panel_state u209_state5" data-label="进行中" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-4_state5_content" class="panel_state_content u209_state5_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u220-4" class="ax_default box_2 u220" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u220-4_div" class="u220_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u220-4_text" class="text u220_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (SVG) -->
+                  <div id="u221-4" class="ax_default image u221" style="width: 60px; height: 60px; left: 0px; top: 0px;visibility: inherit">
+                    <img id="u221-4_img" class="img u221_img" src="images/信息提示/u221.svg"/>
+                    <div id="u221-4_text" class="text u221_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- title (Rectangle) -->
+            <div id="u222-4" class="ax_default box_2 u222" data-label="title" style="width: 284px; height: 49px; left: 73px; top: 0px;visibility: inherit">
+              <div id="u222-4_div" class="u222_div" style="width: 284px; height: 49px;visibility: inherit"></div>
+              <div id="u222-4_text" class="text u222_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">Title</span></p>
+              </div>
+            </div>
+
+            <!-- text (Rectangle) -->
+            <div id="u223-4" class="ax_default label u223" data-label="text" style="width: 337px; height: 19px; left: 73px; top: 59px;visibility: inherit">
+              <div id="u223-4_div" class="u223_div" style="width: 337px; height: 19px;visibility: inherit"></div>
+              <div id="u223-4_text" class="text u223_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">详情信息</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u224-4" class="ax_default box_2 u224" style="width: 73px; height: 49px; left: 357px; top: 0px;visibility: inherit">
+              <div id="u224-4_div" class="u224_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+              <div id="u224-4_text" class="text u224_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u207-5" class="" style="width: 430px; height: 90px;">
+
+          <!-- Unnamed (Group) -->
+          <div id="u208-5" class="ax_default u208" style="visibility: inherit" data-left="0" data-top="0" data-width="430" data-height="90">
+
+            <!-- message (Dynamic Panel) -->
+            <div id="u209-5" class="ax_default u209" data-label="message" style="visibility: inherit">
+              <div id="u209-5_state0" class="panel_state u209_state0" data-label="成功" style=" width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-5_state0_content" class="panel_state_content u209_state0_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u210-5" class="ax_default box_2 u210" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u210-5_div" class="u210_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u210-5_text" class="text u210_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u211-5" class="ax_default box_2 u211" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u211-5_div" class="u211_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u211-5_text" class="text u211_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-5_state1" class="panel_state u209_state1" data-label="警告" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-5_state1_content" class="panel_state_content u209_state1_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u212-5" class="ax_default box_2 u212" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u212-5_div" class="u212_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u212-5_text" class="text u212_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u213-5" class="ax_default box_2 u213" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u213-5_div" class="u213_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u213-5_text" class="text u213_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-5_state2" class="panel_state u209_state2" data-label="错误" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-5_state2_content" class="panel_state_content u209_state2_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u214-5" class="ax_default box_2 u214" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u214-5_div" class="u214_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u214-5_text" class="text u214_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u215-5" class="ax_default box_2 u215" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u215-5_div" class="u215_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u215-5_text" class="text u215_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-5_state3" class="panel_state u209_state3" data-label="提示" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-5_state3_content" class="panel_state_content u209_state3_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u216-5" class="ax_default box_2 u216" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u216-5_div" class="u216_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u216-5_text" class="text u216_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u217-5" class="ax_default box_2 u217" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u217-5_div" class="u217_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u217-5_text" class="text u217_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-5_state4" class="panel_state u209_state4" data-label="帮助" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-5_state4_content" class="panel_state_content u209_state4_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u218-5" class="ax_default box_2 u218" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u218-5_div" class="u218_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u218-5_text" class="text u218_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u219-5" class="ax_default box_2 u219" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u219-5_div" class="u219_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u219-5_text" class="text u219_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-5_state5" class="panel_state u209_state5" data-label="进行中" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-5_state5_content" class="panel_state_content u209_state5_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u220-5" class="ax_default box_2 u220" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u220-5_div" class="u220_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u220-5_text" class="text u220_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (SVG) -->
+                  <div id="u221-5" class="ax_default image u221" style="width: 60px; height: 60px; left: 0px; top: 0px;visibility: inherit">
+                    <img id="u221-5_img" class="img u221_img" src="images/信息提示/u221.svg"/>
+                    <div id="u221-5_text" class="text u221_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- title (Rectangle) -->
+            <div id="u222-5" class="ax_default box_2 u222" data-label="title" style="width: 284px; height: 49px; left: 73px; top: 0px;visibility: inherit">
+              <div id="u222-5_div" class="u222_div" style="width: 284px; height: 49px;visibility: inherit"></div>
+              <div id="u222-5_text" class="text u222_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">Title</span></p>
+              </div>
+            </div>
+
+            <!-- text (Rectangle) -->
+            <div id="u223-5" class="ax_default label u223" data-label="text" style="width: 337px; height: 19px; left: 73px; top: 59px;visibility: inherit">
+              <div id="u223-5_div" class="u223_div" style="width: 337px; height: 19px;visibility: inherit"></div>
+              <div id="u223-5_text" class="text u223_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">详情信息</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u224-5" class="ax_default box_2 u224" style="width: 73px; height: 49px; left: 357px; top: 0px;visibility: inherit">
+              <div id="u224-5_div" class="u224_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+              <div id="u224-5_text" class="text u224_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u207-6" class="" style="width: 430px; height: 90px;">
+
+          <!-- Unnamed (Group) -->
+          <div id="u208-6" class="ax_default u208" style="visibility: inherit" data-left="0" data-top="0" data-width="430" data-height="90">
+
+            <!-- message (Dynamic Panel) -->
+            <div id="u209-6" class="ax_default u209" data-label="message" style="visibility: inherit">
+              <div id="u209-6_state0" class="panel_state u209_state0" data-label="成功" style=" width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-6_state0_content" class="panel_state_content u209_state0_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u210-6" class="ax_default box_2 u210" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u210-6_div" class="u210_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u210-6_text" class="text u210_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u211-6" class="ax_default box_2 u211" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u211-6_div" class="u211_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u211-6_text" class="text u211_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-6_state1" class="panel_state u209_state1" data-label="警告" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-6_state1_content" class="panel_state_content u209_state1_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u212-6" class="ax_default box_2 u212" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u212-6_div" class="u212_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u212-6_text" class="text u212_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u213-6" class="ax_default box_2 u213" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u213-6_div" class="u213_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u213-6_text" class="text u213_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-6_state2" class="panel_state u209_state2" data-label="错误" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-6_state2_content" class="panel_state_content u209_state2_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u214-6" class="ax_default box_2 u214" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u214-6_div" class="u214_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u214-6_text" class="text u214_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u215-6" class="ax_default box_2 u215" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u215-6_div" class="u215_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u215-6_text" class="text u215_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-6_state3" class="panel_state u209_state3" data-label="提示" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-6_state3_content" class="panel_state_content u209_state3_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u216-6" class="ax_default box_2 u216" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u216-6_div" class="u216_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u216-6_text" class="text u216_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u217-6" class="ax_default box_2 u217" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u217-6_div" class="u217_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u217-6_text" class="text u217_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-6_state4" class="panel_state u209_state4" data-label="帮助" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-6_state4_content" class="panel_state_content u209_state4_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u218-6" class="ax_default box_2 u218" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u218-6_div" class="u218_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u218-6_text" class="text u218_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u219-6" class="ax_default box_2 u219" style="width: 73px; height: 49px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u219-6_div" class="u219_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+                    <div id="u219-6_text" class="text u219_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u209-6_state5" class="panel_state u209_state5" data-label="进行中" style="visibility: hidden; width: 430px; height: 90px;visibility: inherit">
+                <div id="u209-6_state5_content" class="panel_state_content u209_state5_content" style="visibility: inherit">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u220-6" class="ax_default box_2 u220" style="width: 430px; height: 90px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u220-6_div" class="u220_div" style="width: 430px; height: 90px;visibility: inherit"></div>
+                    <div id="u220-6_text" class="text u220_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (SVG) -->
+                  <div id="u221-6" class="ax_default image u221" style="width: 60px; height: 60px; left: 0px; top: 0px;visibility: inherit">
+                    <img id="u221-6_img" class="img u221_img" src="images/信息提示/u221.svg"/>
+                    <div id="u221-6_text" class="text u221_text" style="display:none; visibility: hidden">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- title (Rectangle) -->
+            <div id="u222-6" class="ax_default box_2 u222" data-label="title" style="width: 284px; height: 49px; left: 73px; top: 0px;visibility: inherit">
+              <div id="u222-6_div" class="u222_div" style="width: 284px; height: 49px;visibility: inherit"></div>
+              <div id="u222-6_text" class="text u222_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">Title</span></p>
+              </div>
+            </div>
+
+            <!-- text (Rectangle) -->
+            <div id="u223-6" class="ax_default label u223" data-label="text" style="width: 337px; height: 19px; left: 73px; top: 59px;visibility: inherit">
+              <div id="u223-6_div" class="u223_div" style="width: 337px; height: 19px;visibility: inherit"></div>
+              <div id="u223-6_text" class="text u223_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">详情信息</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u224-6" class="ax_default box_2 u224" style="width: 73px; height: 49px; left: 357px; top: 0px;visibility: inherit">
+              <div id="u224-6_div" class="u224_div" style="width: 73px; height: 49px;visibility: inherit"></div>
+              <div id="u224-6_text" class="text u224_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>

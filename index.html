@@ -1,0 +1,472 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>index</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/index/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" type="text/css" rel="stylesheet"/>
+    <style type="text/css">
+@font-face {
+//}</style>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d43011c1f3845cf186551b49c3938bd7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css">{
+}
+    </style>
+    <style type="text/css">
+@font-face {
+//}</style><script type="text/javascript">
+
+window.open = window.open;
+window.open = function () {
+  "use strict";
+  function initialize() {
+    if (window.$) {
+      $(document).ready(function () {
+       setTimeout(function () {window.open('javascript:');}, 0);
+      });
+     } else {
+      setTimeout(initialize, 0);
+     }
+  }
+  setTimeout(initialize, 0);
+  if (typeof String.prototype.trim !== "function") {
+    String.prototype.trim = function () {
+      return this.replace(/^\s+|\s+$/g, "");
+    };
+  }
+  var _open = window.open;
+  var __open = function(url, a, b, c) {
+      if (c !== undefined) return _open(url, a, b, c);
+      if (b !== undefined) return _open(url, a, b);
+      if (a !== undefined) return _open(url, a);
+      return _open(url);
+  };
+  return function (url, a, b, c) {
+    if ((url.substring(0, 11) !== "javascript:") || (!$axure)) {
+      if (window.openReplace) {
+        window.openReplace = false;
+        window.location.replace(url);
+        return false;
+      }
+      return __open(url, a, b, c);
+    }
+    if (!$axure.error) {
+      var ignoreError;
+      $axure.error = function (msg) {
+         if (console) console.log(msg);
+        if (!ignoreError) ignoreError = !confirm(msg);
+        return false;
+      };
+      $axure.internal(function ($ax) {
+        $axure.debug = $ax.globalVariableProvider.getVariableValue('Debug') !== '';
+      });
+      if (window.AxureExInitialize) window.AxureExInitialize();
+    }
+    var script = url.substring(11).trim();
+    if (false && console) console.log("** " + script + " **\n");
+    if ((script[0] === '/') && (script[1] === '/')) return false;
+    if ((script[0] == '@') || (script[0] == '#')) {
+     
+      var src = script.split(":");
+      script = $axure(src[0].trim()).text();
+      if (!script) return $axure.error('Widget "' + src[0] + '" not found.');
+      
+        var l = script.split(':');
+        script = script.replace("[[" + l[0].trim() + "]]", JSON.stringify(l.slice(1).join(':')).slice(1, -1).replace("'", "\\'"));
+     
+      if (src.length > 1) {
+        var frame = $axure(src[1].trim()).$().children("iframe")[0];
+        if (!frame) return $axure.error('Widget InlineFrame "' + src[1] + '" not found.');
+        frame = (frame.contentWindow ? frame.contentWindow : frame.contentDocument.document ? frame.contentDocument.document : frame.contentDocument).document;
+        frame.open("text/html", "replace");
+        frame.write(script);
+        frame.close();
+        return false;
+      }
+    }
+    if (script !== '') {
+      if ($axure.debug) script = eval(script);
+      else try {
+        script = eval(script);
+      } catch (err) {
+        return $axure.error("Exception:\n" + err + "\n\nTrace:\n" + err.stack + "\n\nScript:\n" + script.slice(0, 1024));
+      }
+      if (script) return __open('javascript: ' + JSON.stringify(script) + ';', a, b, c);
+    }
+    return false;
+  };
+}();
+
+//</script><style type="text/css">{
+}
+    </style>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/index/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- 导航条背景色 (Dynamic Panel) -->
+      <div id="u0" class="ax_default" data-label="导航条背景色">
+        <div id="u0_state0" class="panel_state" data-label="State1" style="">
+          <div id="u0_state0_content" class="panel_state_content">
+
+            <!-- 一级菜单条 (Dynamic Panel) -->
+            <div id="u1" class="ax_default" data-label="一级菜单条">
+              <div id="u1_state0" class="panel_state" data-label="State1" style="">
+                <div id="u1_state0_content" class="panel_state_content">
+
+                  <!-- 中继器（一级菜单） (Repeater) -->
+                  <div id="u2" class="ax_default" data-label="中继器（一级菜单）">
+                    <script id="u2_script" type="axure-repeater-template" data-label="中继器（一级菜单）">
+
+                      <!-- 菜单按钮 (Group) -->
+                      <div id="u3" class="ax_default u3" data-label="菜单按钮" data-left="0" data-top="0" data-width="62" data-height="62">
+
+                        <!-- 图标 (Rectangle) -->
+                        <div id="u4" class="ax_default box_1 u4" data-label="图标">
+                          <div id="u4_div" class="u4_div"></div>
+                          <div id="u4_text" class="text u4_text" style="display:none; visibility: hidden">
+                            <p></p>
+                          </div>
+                        </div>
+
+                        <!-- 名称 (Rectangle) -->
+                        <div id="u5" class="ax_default box_1 u5" data-label="名称">
+                          <div id="u5_div" class="u5_div"></div>
+                          <div id="u5_text" class="text u5_text" style="display:none; visibility: hidden">
+                            <p></p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Unnamed (Rectangle) -->
+                      <div id="u6" class="ax_default box_1 selected u6" selectiongroup="导航一级菜单按钮组">
+                        <div id="u6_div" class="u6_div selected"></div>
+                        <div id="u6_text" class="text u6_text" style="display:none; visibility: hidden">
+                          <p></p>
+                        </div>
+                      </div>
+                    </script>
+                    <div id="u2-1" class="preeval" style="width: 62px; height: 62px;">
+
+                      <!-- 菜单按钮 (Group) -->
+                      <div id="u3-1" class="ax_default u3" data-label="菜单按钮" style="visibility: inherit" data-left="0" data-top="0" data-width="62" data-height="62">
+
+                        <!-- 图标 (Rectangle) -->
+                        <div id="u4-1" class="ax_default box_1 u4" data-label="图标" style="width: 62px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u4-1_div" class="u4_div" style="width: 62px; height: 35px;visibility: inherit"></div>
+                          <div id="u4-1_text" class="text u4_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;"></span></p>
+                          </div>
+                        </div>
+
+                        <!-- 名称 (Rectangle) -->
+                        <div id="u5-1" class="ax_default box_1 u5" data-label="名称" style="width: 62px; height: 27px; left: 0px; top: 35px;visibility: inherit">
+                          <div id="u5-1_div" class="u5_div" style="width: 62px; height: 27px;visibility: inherit"></div>
+                          <div id="u5-1_text" class="text u5_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">首页</span></p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Unnamed (Rectangle) -->
+                      <div id="u6-1" class="ax_default box_1 selected u6" selectiongroup="导航一级菜单按钮组" style="width: 62px; height: 62px; left: 0px; top: 0px;visibility: inherit">
+                        <div id="u6-1_div" class="u6_div selected" style="width: 62px; height: 62px;visibility: inherit"></div>
+                        <div id="u6-1_text" class="text u6_text" style="display:none; visibility: hidden">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="u2-2" class="preeval" style="width: 62px; height: 62px;">
+
+                      <!-- 菜单按钮 (Group) -->
+                      <div id="u3-2" class="ax_default u3" data-label="菜单按钮" style="visibility: inherit" data-left="0" data-top="0" data-width="62" data-height="62">
+
+                        <!-- 图标 (Rectangle) -->
+                        <div id="u4-2" class="ax_default box_1 u4" data-label="图标" style="width: 62px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u4-2_div" class="u4_div" style="width: 62px; height: 35px;visibility: inherit"></div>
+                          <div id="u4-2_text" class="text u4_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;"></span></p>
+                          </div>
+                        </div>
+
+                        <!-- 名称 (Rectangle) -->
+                        <div id="u5-2" class="ax_default box_1 u5" data-label="名称" style="width: 62px; height: 27px; left: 0px; top: 35px;visibility: inherit">
+                          <div id="u5-2_div" class="u5_div" style="width: 62px; height: 27px;visibility: inherit"></div>
+                          <div id="u5-2_text" class="text u5_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">组件</span></p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Unnamed (Rectangle) -->
+                      <div id="u6-2" class="ax_default box_1 selected u6" selectiongroup="导航一级菜单按钮组" style="width: 62px; height: 62px; left: 0px; top: 0px;visibility: inherit">
+                        <div id="u6-2_div" class="u6_div selected" style="width: 62px; height: 62px;visibility: inherit"></div>
+                        <div id="u6-2_text" class="text u6_text" style="display:none; visibility: hidden">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="u2-3" class="preeval" style="width: 62px; height: 62px;">
+
+                      <!-- 菜单按钮 (Group) -->
+                      <div id="u3-3" class="ax_default u3" data-label="菜单按钮" style="visibility: inherit" data-left="0" data-top="0" data-width="62" data-height="62">
+
+                        <!-- 图标 (Rectangle) -->
+                        <div id="u4-3" class="ax_default box_1 u4" data-label="图标" style="width: 62px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u4-3_div" class="u4_div" style="width: 62px; height: 35px;visibility: inherit"></div>
+                          <div id="u4-3_text" class="text u4_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;"></span></p>
+                          </div>
+                        </div>
+
+                        <!-- 名称 (Rectangle) -->
+                        <div id="u5-3" class="ax_default box_1 u5" data-label="名称" style="width: 62px; height: 27px; left: 0px; top: 35px;visibility: inherit">
+                          <div id="u5-3_div" class="u5_div" style="width: 62px; height: 27px;visibility: inherit"></div>
+                          <div id="u5-3_text" class="text u5_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">模块</span></p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Unnamed (Rectangle) -->
+                      <div id="u6-3" class="ax_default box_1 selected u6" selectiongroup="导航一级菜单按钮组" style="width: 62px; height: 62px; left: 0px; top: 0px;visibility: inherit">
+                        <div id="u6-3_div" class="u6_div selected" style="width: 62px; height: 62px;visibility: inherit"></div>
+                        <div id="u6-3_text" class="text u6_text" style="display:none; visibility: hidden">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="u2-4" class="preeval" style="width: 62px; height: 62px;">
+
+                      <!-- 菜单按钮 (Group) -->
+                      <div id="u3-4" class="ax_default u3" data-label="菜单按钮" style="visibility: inherit" data-left="0" data-top="0" data-width="62" data-height="62">
+
+                        <!-- 图标 (Rectangle) -->
+                        <div id="u4-4" class="ax_default box_1 u4" data-label="图标" style="width: 62px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u4-4_div" class="u4_div" style="width: 62px; height: 35px;visibility: inherit"></div>
+                          <div id="u4-4_text" class="text u4_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;"></span></p>
+                          </div>
+                        </div>
+
+                        <!-- 名称 (Rectangle) -->
+                        <div id="u5-4" class="ax_default box_1 u5" data-label="名称" style="width: 62px; height: 27px; left: 0px; top: 35px;visibility: inherit">
+                          <div id="u5-4_div" class="u5_div" style="width: 62px; height: 27px;visibility: inherit"></div>
+                          <div id="u5-4_text" class="text u5_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">模版</span></p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Unnamed (Rectangle) -->
+                      <div id="u6-4" class="ax_default box_1 selected u6" selectiongroup="导航一级菜单按钮组" style="width: 62px; height: 62px; left: 0px; top: 0px;visibility: inherit">
+                        <div id="u6-4_div" class="u6_div selected" style="width: 62px; height: 62px;visibility: inherit"></div>
+                        <div id="u6-4_text" class="text u6_text" style="display:none; visibility: hidden">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="u2-5" class="preeval" style="width: 62px; height: 62px;">
+
+                      <!-- 菜单按钮 (Group) -->
+                      <div id="u3-5" class="ax_default u3" data-label="菜单按钮" style="visibility: inherit" data-left="0" data-top="0" data-width="62" data-height="62">
+
+                        <!-- 图标 (Rectangle) -->
+                        <div id="u4-5" class="ax_default box_1 u4" data-label="图标" style="width: 62px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u4-5_div" class="u4_div" style="width: 62px; height: 35px;visibility: inherit"></div>
+                          <div id="u4-5_text" class="text u4_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;"></span></p>
+                          </div>
+                        </div>
+
+                        <!-- 名称 (Rectangle) -->
+                        <div id="u5-5" class="ax_default box_1 u5" data-label="名称" style="width: 62px; height: 27px; left: 0px; top: 35px;visibility: inherit">
+                          <div id="u5-5_div" class="u5_div" style="width: 62px; height: 27px;visibility: inherit"></div>
+                          <div id="u5-5_text" class="text u5_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">帮助</span></p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Unnamed (Rectangle) -->
+                      <div id="u6-5" class="ax_default box_1 selected u6" selectiongroup="导航一级菜单按钮组" style="width: 62px; height: 62px; left: 0px; top: 0px;visibility: inherit">
+                        <div id="u6-5_div" class="u6_div selected" style="width: 62px; height: 62px;visibility: inherit"></div>
+                        <div id="u6-5_text" class="text u6_text" style="display:none; visibility: hidden">
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 管理员面板 (Dynamic Panel) -->
+            <div id="u7" class="ax_default" data-label="管理员面板">
+              <div id="u7_state0" class="panel_state" data-label="State1" style="">
+                <div id="u7_state0_content" class="panel_state_content">
+
+                  <!-- 管理员按钮 (Rectangle) -->
+                  <div id="u8" class="ax_default box_1" data-label="管理员按钮">
+                    <div id="u8_div" class=""></div>
+                    <div id="u8_text" class="text ">
+                      <p><span style="text-decoration:none;"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 主框架 (Inline Frame) -->
+      <div id="u9" class="ax_default" data-label="主框架">
+        <iframe id="u9_input" data-label="主框架" scrolling="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+
+      <!-- 管理员菜单 (Dynamic Panel) -->
+      <div id="u10" class="ax_default ax_default_hidden" data-label="管理员菜单" style="display:none; visibility: hidden">
+        <div id="u10_state0" class="panel_state" data-label="State1" style="">
+          <div id="u10_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Group) -->
+            <div id="u11" class="ax_default" data-left="128" data-top="25" data-width="172" data-height="127">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u12" class="ax_default box_1">
+                <div id="u12_div" class=""></div>
+                <div id="u12_text" class="text " style="display:none; visibility: hidden">
+                  <p></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Triangle) -->
+              <div id="u13" class="ax_default _流程形状">
+                <img id="u13_img" class="img " src="images/index/u13.svg"/>
+                <div id="u13_text" class="text " style="display:none; visibility: hidden">
+                  <p></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 管理员菜单 (Repeater) -->
+            <div id="u14" class="ax_default" data-label="管理员菜单">
+              <script id="u14_script" type="axure-repeater-template" data-label="管理员菜单">
+
+                <!-- icon (Rectangle) -->
+                <div id="u15" class="ax_default box_1 u15" data-label="icon">
+                  <div id="u15_div" class="u15_div"></div>
+                  <div id="u15_text" class="text u15_text" style="display:none; visibility: hidden">
+                    <p></p>
+                  </div>
+                </div>
+
+                <!-- text (Rectangle) -->
+                <div id="u16" class="ax_default box_1 u16" data-label="text">
+                  <div id="u16_div" class="u16_div"></div>
+                  <div id="u16_text" class="text u16_text" style="display:none; visibility: hidden">
+                    <p></p>
+                  </div>
+                </div>
+              </script>
+              <div id="u14-1" class="preeval" style="width: 126px; height: 30px;">
+
+                <!-- icon (Rectangle) -->
+                <div id="u15-1" class="ax_default box_1 u15" data-label="icon" style="width: 45px; height: 30px; left: 0px; top: 0px;visibility: inherit">
+                  <div id="u15-1_div" class="u15_div" style="width: 45px; height: 30px;visibility: inherit"></div>
+                  <div id="u15-1_text" class="text u15_text" style="visibility: inherit">
+                    <p><span style="text-decoration:none;"></span></p>
+                  </div>
+                </div>
+
+                <!-- text (Rectangle) -->
+                <div id="u16-1" class="ax_default box_1 u16" data-label="text" style="width: 81px; height: 30px; left: 45px; top: 0px;visibility: inherit">
+                  <div id="u16-1_div" class="u16_div" style="width: 81px; height: 30px;visibility: inherit"></div>
+                  <div id="u16-1_text" class="text u16_text" style="visibility: inherit">
+                    <p><span style="text-decoration:none;">设置</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id="u14-2" class="preeval" style="width: 126px; height: 30px;">
+
+                <!-- icon (Rectangle) -->
+                <div id="u15-2" class="ax_default box_1 u15" data-label="icon" style="width: 45px; height: 30px; left: 0px; top: 0px;visibility: inherit">
+                  <div id="u15-2_div" class="u15_div" style="width: 45px; height: 30px;visibility: inherit"></div>
+                  <div id="u15-2_text" class="text u15_text" style="visibility: inherit">
+                    <p><span style="text-decoration:none;"></span></p>
+                  </div>
+                </div>
+
+                <!-- text (Rectangle) -->
+                <div id="u16-2" class="ax_default box_1 u16" data-label="text" style="width: 81px; height: 30px; left: 45px; top: 0px;visibility: inherit">
+                  <div id="u16-2_div" class="u16_div" style="width: 81px; height: 30px;visibility: inherit"></div>
+                  <div id="u16-2_text" class="text u16_text" style="visibility: inherit">
+                    <p><span style="text-decoration:none;">退出</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u17" class="ax_default box_2">
+        <div id="u17_div" class=""></div>
+        <div id="u17_text" class="text ">
+          <p><span style="text-decoration:none;">华宇AXURE高级组件模版</span></p>
+        </div>
+      </div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>

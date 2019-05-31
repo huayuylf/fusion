@@ -1,0 +1,564 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>表单-综合</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/表单-综合/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" type="text/css" rel="stylesheet"/>
+    <style type="text/css">
+@font-face {
+//}</style>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d43011c1f3845cf186551b49c3938bd7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css">{
+}
+    </style>
+    <style type="text/css">
+@font-face {
+//}</style><script type="text/javascript">
+
+window.open = window.open;
+window.open = function () {
+  "use strict";
+  function initialize() {
+    if (window.$) {
+      $(document).ready(function () {
+       setTimeout(function () {window.open('javascript:');}, 0);
+      });
+     } else {
+      setTimeout(initialize, 0);
+     }
+  }
+  setTimeout(initialize, 0);
+  if (typeof String.prototype.trim !== "function") {
+    String.prototype.trim = function () {
+      return this.replace(/^\s+|\s+$/g, "");
+    };
+  }
+  var _open = window.open;
+  var __open = function(url, a, b, c) {
+      if (c !== undefined) return _open(url, a, b, c);
+      if (b !== undefined) return _open(url, a, b);
+      if (a !== undefined) return _open(url, a);
+      return _open(url);
+  };
+  return function (url, a, b, c) {
+    if ((url.substring(0, 11) !== "javascript:") || (!$axure)) {
+      if (window.openReplace) {
+        window.openReplace = false;
+        window.location.replace(url);
+        return false;
+      }
+      return __open(url, a, b, c);
+    }
+    if (!$axure.error) {
+      var ignoreError;
+      $axure.error = function (msg) {
+         if (console) console.log(msg);
+        if (!ignoreError) ignoreError = !confirm(msg);
+        return false;
+      };
+      $axure.internal(function ($ax) {
+        $axure.debug = $ax.globalVariableProvider.getVariableValue('Debug') !== '';
+      });
+      if (window.AxureExInitialize) window.AxureExInitialize();
+    }
+    var script = url.substring(11).trim();
+    if (false && console) console.log("** " + script + " **\n");
+    if ((script[0] === '/') && (script[1] === '/')) return false;
+    if ((script[0] == '@') || (script[0] == '#')) {
+     
+      var src = script.split(":");
+      script = $axure(src[0].trim()).text();
+      if (!script) return $axure.error('Widget "' + src[0] + '" not found.');
+      
+        var l = script.split(':');
+        script = script.replace("[[" + l[0].trim() + "]]", JSON.stringify(l.slice(1).join(':')).slice(1, -1).replace("'", "\\'"));
+     
+      if (src.length > 1) {
+        var frame = $axure(src[1].trim()).$().children("iframe")[0];
+        if (!frame) return $axure.error('Widget InlineFrame "' + src[1] + '" not found.');
+        frame = (frame.contentWindow ? frame.contentWindow : frame.contentDocument.document ? frame.contentDocument.document : frame.contentDocument).document;
+        frame.open("text/html", "replace");
+        frame.write(script);
+        frame.close();
+        return false;
+      }
+    }
+    if (script !== '') {
+      if ($axure.debug) script = eval(script);
+      else try {
+        script = eval(script);
+      } catch (err) {
+        return $axure.error("Exception:\n" + err + "\n\nTrace:\n" + err.stack + "\n\nScript:\n" + script.slice(0, 1024));
+      }
+      if (script) return __open('javascript: ' + JSON.stringify(script) + ';', a, b, c);
+    }
+    return false;
+  };
+}();
+
+//</script><style type="text/css">{
+}
+    </style>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/表单-综合/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (Group) -->
+      <div id="u144" class="ax_default" data-left="100" data-top="333" data-width="1100" data-height="953">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u145" class="ax_default box_1">
+          <div id="u145_div" class=""></div>
+          <div id="u145_text" class="text ">
+            <p><span style="text-decoration:none;">基本用法</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u146" class="ax_default box_1">
+          <div id="u146_div" class=""></div>
+          <div id="u146_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u147" class="ax_default" data-left="100" data-top="100" data-width="1100" data-height="203">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u148" class="ax_default box_1">
+          <div id="u148_div" class=""></div>
+          <div id="u148_text" class="text ">
+            <p><span style="text-decoration:none;">组件样式-1</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u149" class="ax_default box_1">
+          <div id="u149_div" class=""></div>
+          <div id="u149_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Repeater) -->
+      <div id="u150" class="ax_default">
+        <script id="u150_script" type="axure-repeater-template">
+
+          <!-- Unnamed (Group) -->
+          <div id="u151" class="ax_default u151" data-left="0" data-top="0" data-width="280" data-height="50">
+
+            <!-- name (Rectangle) -->
+            <div id="u152" class="ax_default box_2 u152" data-label="name">
+              <div id="u152_div" class="u152_div"></div>
+              <div id="u152_text" class="text u152_text">
+                <p><span style="text-decoration:none;">项目名称</span></p>
+              </div>
+            </div>
+
+            <!-- 主区域 (Dynamic Panel) -->
+            <div id="u153" class="ax_default u153" data-label="主区域">
+              <div id="u153_state0" class="panel_state u153_state0" data-label="文本" style="">
+                <div id="u153_state0_content" class="panel_state_content u153_state0_content">
+
+                  <!-- 文本框 (Rectangle) -->
+                  <div id="u154" class="ax_default box_2 u154" data-label="文本框">
+                    <div id="u154_div" class="u154_div"></div>
+                    <div id="u154_text" class="text u154_text">
+                      <p><span style="text-decoration:none;">信息内容</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u153_state1" class="panel_state u153_state1" data-label="下拉框" style="visibility: hidden;">
+                <div id="u153_state1_content" class="panel_state_content u153_state1_content">
+
+                  <!-- 下拉框 (Droplist) -->
+                  <div id="u155" class="ax_default droplist u155" data-label="下拉框">
+                    <div id="u155_div" class="u155_div"></div>
+                    <select id="u155_input" class="u155_input">
+                      <option class="u155_input_option" value="请选择">请选择</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div id="u153_state2" class="panel_state u153_state2" data-label="输入框" style="visibility: hidden;">
+                <div id="u153_state2_content" class="panel_state_content u153_state2_content">
+
+                  <!-- 输入框 (Text Field) -->
+                  <div id="u156" class="ax_default text_field u156" data-label="输入框">
+                    <div id="u156_div" class="u156_div"></div>
+                    <input id="u156_input" type="text" value="" class="u156_input"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 辅助信息提示框 (Dynamic Panel) -->
+          <div id="u157" class="ax_default u157" data-label="辅助信息提示框">
+            <div id="u157_state0" class="panel_state u157_state0" data-label="提示" style="">
+              <div id="u157_state0_content" class="panel_state_content u157_state0_content">
+
+                <!-- 提示信息 (Rectangle) -->
+                <div id="u158" class="ax_default box_2 u158" data-label="提示信息">
+                  <div id="u158_div" class="u158_div"></div>
+                  <div id="u158_text" class="text u158_text">
+                    <p><span style="text-decoration:none;">提示信息</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="u157_state1" class="panel_state u157_state1" data-label="警告" style="visibility: hidden;">
+              <div id="u157_state1_content" class="panel_state_content u157_state1_content">
+
+                <!-- 错误提示 (Rectangle) -->
+                <div id="u159" class="ax_default box_2 u159" data-label="错误提示">
+                  <div id="u159_div" class="u159_div"></div>
+                  <div id="u159_text" class="text u159_text">
+                    <p><span style="text-decoration:none;">提示信息</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </script>
+        <div id="u150-1" class="" style="width: 280px; height: 61px;">
+
+          <!-- Unnamed (Group) -->
+          <div id="u151-1" class="ax_default u151" style="visibility: inherit" data-left="0" data-top="0" data-width="280" data-height="50">
+
+            <!-- name (Rectangle) -->
+            <div id="u152-1" class="ax_default box_2 u152" data-label="name" style="width: 100px; height: 50px; left: 0px; top: 0px;visibility: inherit">
+              <div id="u152-1_div" class="u152_div" style="width: 100px; height: 50px;visibility: inherit"></div>
+              <div id="u152-1_text" class="text u152_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">项目名称</span></p>
+              </div>
+            </div>
+
+            <!-- 主区域 (Dynamic Panel) -->
+            <div id="u153-1" class="ax_default u153" data-label="主区域" style="visibility: inherit">
+              <div id="u153-1_state0" class="panel_state u153_state0" data-label="文本" style=" width: 180px; height: 50px;visibility: inherit">
+                <div id="u153-1_state0_content" class="panel_state_content u153_state0_content" style="visibility: inherit">
+
+                  <!-- 文本框 (Rectangle) -->
+                  <div id="u154-1" class="ax_default box_2 u154" data-label="文本框" style="width: 180px; height: 50px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u154-1_div" class="u154_div" style="width: 180px; height: 50px;visibility: inherit"></div>
+                    <div id="u154-1_text" class="text u154_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;">信息内容</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u153-1_state1" class="panel_state u153_state1" data-label="下拉框" style="visibility: hidden; width: 267px; height: 43px;visibility: inherit">
+                <div id="u153-1_state1_content" class="panel_state_content u153_state1_content" style="visibility: inherit">
+
+                  <!-- 下拉框 (Droplist) -->
+                  <div id="u155-1" class="ax_default droplist u155" data-label="下拉框" style="width: 267px; height: 35px; left: 0px; top: 8px;visibility: inherit">
+                    <div id="u155-1_div" class="u155_div" style="width: 267px; height: 35px;visibility: inherit"></div>
+                    <select id="u155-1_input" class="u155_input">
+                      <option class="u155_input_option" value="请选择">请选择</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div id="u153-1_state2" class="panel_state u153_state2" data-label="输入框" style="visibility: hidden; width: 267px; height: 43px;visibility: inherit">
+                <div id="u153-1_state2_content" class="panel_state_content u153_state2_content" style="visibility: inherit">
+
+                  <!-- 输入框 (Text Field) -->
+                  <div id="u156-1" class="ax_default text_field u156" data-label="输入框" style="width: 267px; height: 35px; left: 0px; top: 8px;visibility: inherit">
+                    <div id="u156-1_div" class="u156_div" style="width: 267px; height: 35px;visibility: inherit"></div>
+                    <input id="u156-1_input" type="text" value="" class="u156_input"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 辅助信息提示框 (Dynamic Panel) -->
+          <div id="u157-1" class="ax_default u157" data-label="辅助信息提示框" style="visibility: inherit">
+            <div id="u157-1_state0" class="panel_state u157_state0" data-label="提示" style=" width: 180px; height: 21px;visibility: inherit">
+              <div id="u157-1_state0_content" class="panel_state_content u157_state0_content" style="visibility: inherit">
+
+                <!-- 提示信息 (Rectangle) -->
+                <div id="u158-1" class="ax_default box_2 u158" data-label="提示信息" style="width: 267px; height: 21px; left: 0px; top: 0px;visibility: inherit">
+                  <div id="u158-1_div" class="u158_div" style="width: 267px; height: 21px;visibility: inherit"></div>
+                  <div id="u158-1_text" class="text u158_text" style="visibility: inherit">
+                    <p><span style="text-decoration:none;">提示信息</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="u157-1_state1" class="panel_state u157_state1" data-label="警告" style="visibility: hidden; width: 180px; height: 21px;visibility: inherit">
+              <div id="u157-1_state1_content" class="panel_state_content u157_state1_content" style="visibility: inherit">
+
+                <!-- 错误提示 (Rectangle) -->
+                <div id="u159-1" class="ax_default box_2 u159" data-label="错误提示" style="width: 267px; height: 21px; left: 0px; top: 3px;visibility: inherit">
+                  <div id="u159-1_div" class="u159_div" style="width: 267px; height: 21px;visibility: inherit"></div>
+                  <div id="u159-1_text" class="text u159_text" style="visibility: inherit">
+                    <p><span style="text-decoration:none;">提示信息</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u150-2" class="" style="width: 280px; height: 61px;">
+
+          <!-- Unnamed (Group) -->
+          <div id="u151-2" class="ax_default u151" style="visibility: inherit" data-left="0" data-top="0" data-width="280" data-height="50">
+
+            <!-- name (Rectangle) -->
+            <div id="u152-2" class="ax_default box_2 u152" data-label="name" style="width: 100px; height: 50px; left: 0px; top: 0px;visibility: inherit">
+              <div id="u152-2_div" class="u152_div" style="width: 100px; height: 50px;visibility: inherit"></div>
+              <div id="u152-2_text" class="text u152_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">项目名称</span></p>
+              </div>
+            </div>
+
+            <!-- 主区域 (Dynamic Panel) -->
+            <div id="u153-2" class="ax_default u153" data-label="主区域" style="visibility: inherit">
+              <div id="u153-2_state0" class="panel_state u153_state0" data-label="文本" style=" width: 180px; height: 50px;visibility: inherit">
+                <div id="u153-2_state0_content" class="panel_state_content u153_state0_content" style="visibility: inherit">
+
+                  <!-- 文本框 (Rectangle) -->
+                  <div id="u154-2" class="ax_default box_2 u154" data-label="文本框" style="width: 180px; height: 50px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u154-2_div" class="u154_div" style="width: 180px; height: 50px;visibility: inherit"></div>
+                    <div id="u154-2_text" class="text u154_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;">信息内容</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u153-2_state1" class="panel_state u153_state1" data-label="下拉框" style="visibility: hidden; width: 267px; height: 43px;visibility: inherit">
+                <div id="u153-2_state1_content" class="panel_state_content u153_state1_content" style="visibility: inherit">
+
+                  <!-- 下拉框 (Droplist) -->
+                  <div id="u155-2" class="ax_default droplist u155" data-label="下拉框" style="width: 267px; height: 35px; left: 0px; top: 8px;visibility: inherit">
+                    <div id="u155-2_div" class="u155_div" style="width: 267px; height: 35px;visibility: inherit"></div>
+                    <select id="u155-2_input" class="u155_input">
+                      <option class="u155_input_option" value="请选择">请选择</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div id="u153-2_state2" class="panel_state u153_state2" data-label="输入框" style="visibility: hidden; width: 267px; height: 43px;visibility: inherit">
+                <div id="u153-2_state2_content" class="panel_state_content u153_state2_content" style="visibility: inherit">
+
+                  <!-- 输入框 (Text Field) -->
+                  <div id="u156-2" class="ax_default text_field u156" data-label="输入框" style="width: 267px; height: 35px; left: 0px; top: 8px;visibility: inherit">
+                    <div id="u156-2_div" class="u156_div" style="width: 267px; height: 35px;visibility: inherit"></div>
+                    <input id="u156-2_input" type="text" value="" class="u156_input"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 辅助信息提示框 (Dynamic Panel) -->
+          <div id="u157-2" class="ax_default u157" data-label="辅助信息提示框" style="visibility: inherit">
+            <div id="u157-2_state0" class="panel_state u157_state0" data-label="提示" style=" width: 180px; height: 21px;visibility: inherit">
+              <div id="u157-2_state0_content" class="panel_state_content u157_state0_content" style="visibility: inherit">
+
+                <!-- 提示信息 (Rectangle) -->
+                <div id="u158-2" class="ax_default box_2 u158" data-label="提示信息" style="width: 267px; height: 21px; left: 0px; top: 0px;visibility: inherit">
+                  <div id="u158-2_div" class="u158_div" style="width: 267px; height: 21px;visibility: inherit"></div>
+                  <div id="u158-2_text" class="text u158_text" style="visibility: inherit">
+                    <p><span style="text-decoration:none;">提示信息</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="u157-2_state1" class="panel_state u157_state1" data-label="警告" style="visibility: hidden; width: 180px; height: 21px;visibility: inherit">
+              <div id="u157-2_state1_content" class="panel_state_content u157_state1_content" style="visibility: inherit">
+
+                <!-- 错误提示 (Rectangle) -->
+                <div id="u159-2" class="ax_default box_2 u159" data-label="错误提示" style="width: 267px; height: 21px; left: 0px; top: 3px;visibility: inherit">
+                  <div id="u159-2_div" class="u159_div" style="width: 267px; height: 21px;visibility: inherit"></div>
+                  <div id="u159-2_text" class="text u159_text" style="visibility: inherit">
+                    <p><span style="text-decoration:none;">提示信息</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u150-3" class="" style="width: 280px; height: 61px;">
+
+          <!-- Unnamed (Group) -->
+          <div id="u151-3" class="ax_default u151" style="visibility: inherit" data-left="0" data-top="0" data-width="280" data-height="50">
+
+            <!-- name (Rectangle) -->
+            <div id="u152-3" class="ax_default box_2 u152" data-label="name" style="width: 100px; height: 50px; left: 0px; top: 0px;visibility: inherit">
+              <div id="u152-3_div" class="u152_div" style="width: 100px; height: 50px;visibility: inherit"></div>
+              <div id="u152-3_text" class="text u152_text" style="visibility: inherit">
+                <p><span style="text-decoration:none;">项目名称</span></p>
+              </div>
+            </div>
+
+            <!-- 主区域 (Dynamic Panel) -->
+            <div id="u153-3" class="ax_default u153" data-label="主区域" style="visibility: inherit">
+              <div id="u153-3_state0" class="panel_state u153_state0" data-label="文本" style=" width: 180px; height: 50px;visibility: inherit">
+                <div id="u153-3_state0_content" class="panel_state_content u153_state0_content" style="visibility: inherit">
+
+                  <!-- 文本框 (Rectangle) -->
+                  <div id="u154-3" class="ax_default box_2 u154" data-label="文本框" style="width: 180px; height: 50px; left: 0px; top: 0px;visibility: inherit">
+                    <div id="u154-3_div" class="u154_div" style="width: 180px; height: 50px;visibility: inherit"></div>
+                    <div id="u154-3_text" class="text u154_text" style="visibility: inherit">
+                      <p><span style="text-decoration:none;">信息内容</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="u153-3_state1" class="panel_state u153_state1" data-label="下拉框" style="visibility: hidden; width: 267px; height: 43px;visibility: inherit">
+                <div id="u153-3_state1_content" class="panel_state_content u153_state1_content" style="visibility: inherit">
+
+                  <!-- 下拉框 (Droplist) -->
+                  <div id="u155-3" class="ax_default droplist u155" data-label="下拉框" style="width: 267px; height: 35px; left: 0px; top: 8px;visibility: inherit">
+                    <div id="u155-3_div" class="u155_div" style="width: 267px; height: 35px;visibility: inherit"></div>
+                    <select id="u155-3_input" class="u155_input">
+                      <option class="u155_input_option" value="请选择">请选择</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div id="u153-3_state2" class="panel_state u153_state2" data-label="输入框" style="visibility: hidden; width: 267px; height: 43px;visibility: inherit">
+                <div id="u153-3_state2_content" class="panel_state_content u153_state2_content" style="visibility: inherit">
+
+                  <!-- 输入框 (Text Field) -->
+                  <div id="u156-3" class="ax_default text_field u156" data-label="输入框" style="width: 267px; height: 35px; left: 0px; top: 8px;visibility: inherit">
+                    <div id="u156-3_div" class="u156_div" style="width: 267px; height: 35px;visibility: inherit"></div>
+                    <input id="u156-3_input" type="text" value="" class="u156_input"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 辅助信息提示框 (Dynamic Panel) -->
+          <div id="u157-3" class="ax_default u157" data-label="辅助信息提示框" style="visibility: inherit">
+            <div id="u157-3_state0" class="panel_state u157_state0" data-label="提示" style=" width: 180px; height: 21px;visibility: inherit">
+              <div id="u157-3_state0_content" class="panel_state_content u157_state0_content" style="visibility: inherit">
+
+                <!-- 提示信息 (Rectangle) -->
+                <div id="u158-3" class="ax_default box_2 u158" data-label="提示信息" style="width: 267px; height: 21px; left: 0px; top: 0px;visibility: inherit">
+                  <div id="u158-3_div" class="u158_div" style="width: 267px; height: 21px;visibility: inherit"></div>
+                  <div id="u158-3_text" class="text u158_text" style="visibility: inherit">
+                    <p><span style="text-decoration:none;">提示信息</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="u157-3_state1" class="panel_state u157_state1" data-label="警告" style="visibility: hidden; width: 180px; height: 21px;visibility: inherit">
+              <div id="u157-3_state1_content" class="panel_state_content u157_state1_content" style="visibility: inherit">
+
+                <!-- 错误提示 (Rectangle) -->
+                <div id="u159-3" class="ax_default box_2 u159" data-label="错误提示" style="width: 267px; height: 21px; left: 0px; top: 3px;visibility: inherit">
+                  <div id="u159-3_div" class="u159_div" style="width: 267px; height: 21px;visibility: inherit"></div>
+                  <div id="u159-3_text" class="text u159_text" style="visibility: inherit">
+                    <p><span style="text-decoration:none;">提示信息</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u160" class="ax_default image">
+        <img id="u160_img" class="img " src="images/表单-综合/u160.png"/>
+        <div id="u160_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u161" class="ax_default box_1">
+        <div id="u161_div" class=""></div>
+        <div id="u161_text" class="text ">
+          <p><span style="text-decoration:none;">第一步：</span></p><p><span style="text-decoration:none;">设置横向 or 竖向。</span></p><p><span style="text-decoration:none;">每行/列的数量</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u162" class="ax_default box_1">
+        <div id="u162_div" class=""></div>
+        <div id="u162_text" class="text ">
+          <p><span style="text-decoration:none;">第二步：</span></p><p><span style="text-decoration:none;">设置每个item的数据。</span></p><p><span style="text-decoration:none;">name:标题</span></p><p><span style="text-decoration:none;">type:类型。</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; 文本：文字，主要用来展示</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; 输入框：用于查询、输入</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; 下拉框：用于分类筛选或者输入</span></p><p><span style="text-decoration:none;"><br></span></p><p><span style="text-decoration:none;">value：在操作控件上显示的内容/文本。</span></p><p><span style="text-decoration:none;">infotype：提示信息内容类型</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 提示：文本为提示的灰色。</span></p><p><span style="text-decoration:none;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 警告：文本颜色为红色。</span></p><p><span style="text-decoration:none;">info：提示内容文本</span></p><p><span style="text-decoration:none;"><br></span></p><p><span style="text-decoration:none;">width：宽度，操作控件的宽度。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (面包屑标题) -->
+
+      <!-- Unnamed (Dynamic Panel) -->
+      <div id="u164" class="ax_default">
+        <div id="u164_state0" class="panel_state" data-label="State1" style="">
+          <div id="u164_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u165" class="ax_default box_1">
+              <div id="u165_div" class=""></div>
+              <div id="u165_text" class="text ">
+                <p><span style="text-decoration:none;">标题名称</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="u163" style="display:none; visibility:hidden;"></div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>

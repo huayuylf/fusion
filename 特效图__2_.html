@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>特效图 (2)</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/特效图__2_/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" type="text/css" rel="stylesheet"/>
+    <style type="text/css">
+@font-face {
+//}</style>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d43011c1f3845cf186551b49c3938bd7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css">{
+}
+    </style>
+    <style type="text/css">
+@font-face {
+//}</style><script type="text/javascript">
+
+window.open = window.open;
+window.open = function () {
+  "use strict";
+  function initialize() {
+    if (window.$) {
+      $(document).ready(function () {
+       setTimeout(function () {window.open('javascript:');}, 0);
+      });
+     } else {
+      setTimeout(initialize, 0);
+     }
+  }
+  setTimeout(initialize, 0);
+  if (typeof String.prototype.trim !== "function") {
+    String.prototype.trim = function () {
+      return this.replace(/^\s+|\s+$/g, "");
+    };
+  }
+  var _open = window.open;
+  var __open = function(url, a, b, c) {
+      if (c !== undefined) return _open(url, a, b, c);
+      if (b !== undefined) return _open(url, a, b);
+      if (a !== undefined) return _open(url, a);
+      return _open(url);
+  };
+  return function (url, a, b, c) {
+    if ((url.substring(0, 11) !== "javascript:") || (!$axure)) {
+      if (window.openReplace) {
+        window.openReplace = false;
+        window.location.replace(url);
+        return false;
+      }
+      return __open(url, a, b, c);
+    }
+    if (!$axure.error) {
+      var ignoreError;
+      $axure.error = function (msg) {
+         if (console) console.log(msg);
+        if (!ignoreError) ignoreError = !confirm(msg);
+        return false;
+      };
+      $axure.internal(function ($ax) {
+        $axure.debug = $ax.globalVariableProvider.getVariableValue('Debug') !== '';
+      });
+      if (window.AxureExInitialize) window.AxureExInitialize();
+    }
+    var script = url.substring(11).trim();
+    if (false && console) console.log("** " + script + " **\n");
+    if ((script[0] === '/') && (script[1] === '/')) return false;
+    if ((script[0] == '@') || (script[0] == '#')) {
+     
+      var src = script.split(":");
+      script = $axure(src[0].trim()).text();
+      if (!script) return $axure.error('Widget "' + src[0] + '" not found.');
+      
+        var l = script.split(':');
+        script = script.replace("[[" + l[0].trim() + "]]", JSON.stringify(l.slice(1).join(':')).slice(1, -1).replace("'", "\\'"));
+     
+      if (src.length > 1) {
+        var frame = $axure(src[1].trim()).$().children("iframe")[0];
+        if (!frame) return $axure.error('Widget InlineFrame "' + src[1] + '" not found.');
+        frame = (frame.contentWindow ? frame.contentWindow : frame.contentDocument.document ? frame.contentDocument.document : frame.contentDocument).document;
+        frame.open("text/html", "replace");
+        frame.write(script);
+        frame.close();
+        return false;
+      }
+    }
+    if (script !== '') {
+      if ($axure.debug) script = eval(script);
+      else try {
+        script = eval(script);
+      } catch (err) {
+        return $axure.error("Exception:\n" + err + "\n\nTrace:\n" + err.stack + "\n\nScript:\n" + script.slice(0, 1024));
+      }
+      if (script) return __open('javascript: ' + JSON.stringify(script) + ';', a, b, c);
+    }
+    return false;
+  };
+}();
+
+//</script><style type="text/css">{
+}
+    </style>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/特效图__2_/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (面包屑标题) -->
+
+      <!-- Unnamed (Dynamic Panel) -->
+      <div id="u466" class="ax_default">
+        <div id="u466_state0" class="panel_state" data-label="State1" style="">
+          <div id="u466_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u467" class="ax_default box_1">
+              <div id="u467_div" class=""></div>
+              <div id="u467_text" class="text ">
+                <p><span style="text-decoration:none;">标题名称</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="u465" style="display:none; visibility:hidden;"></div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u468" class="ax_default" data-left="100" data-top="627" data-width="1100" data-height="1068">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u469" class="ax_default box_1">
+          <div id="u469_div" class=""></div>
+          <div id="u469_text" class="text ">
+            <p><span style="text-decoration:none;">基本用法</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u470" class="ax_default box_1">
+          <div id="u470_div" class=""></div>
+          <div id="u470_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u471" class="ax_default" data-left="100" data-top="100" data-width="1100" data-height="506">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u472" class="ax_default box_1">
+          <div id="u472_div" class=""></div>
+          <div id="u472_text" class="text ">
+            <p><span style="text-decoration:none;">组件样式</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u473" class="ax_default box_1">
+          <div id="u473_div" class=""></div>
+          <div id="u473_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Repeater) -->
+      <div id="u474" class="ax_default">
+        <script id="u474_script" type="axure-repeater-template">
+
+          <!-- ab.Script (Text Area) -->
+          <div id="u475" class="ax_default example_script ax_default_hidden u475" data-label="ab.Script" style="display:none; visibility: hidden">
+            <div id="u475_div" class="u475_div"></div>
+            <textarea id="u475_input" class="u475_input">&lt;html&gt;
+&nbsp; &lt;head&gt;
+&nbsp; &nbsp; &lt;script type=&quot;text/javascript&quot; src=&quot;https://www.google.com/jsapi&quot;&gt;&lt;/script&gt;
+&nbsp; &nbsp; &lt;script type=&quot;text/javascript&quot;&gt;
+&nbsp; &nbsp; &nbsp; google.load(&quot;visualization&quot;, &quot;1&quot;, {packages:[&quot;corechart&quot;]});
+&nbsp; &nbsp; &nbsp; google.setOnLoadCallback(drawChart);
+&nbsp; &nbsp; &nbsp; function drawChart() {
+&nbsp; &nbsp; &nbsp; &nbsp; var data = google.visualization.arrayToDataTable([
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ['Task', 'Hours per Day'],
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ['Eat',&nbsp; &nbsp; &nbsp; 2],
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ['Commute',&nbsp; 2],
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ['Watch TV', 2],
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ['Sleep',&nbsp; &nbsp; 7]
+&nbsp; &nbsp; &nbsp; &nbsp; ]);
+
+&nbsp; &nbsp; &nbsp; &nbsp; var options = {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; title: 'My Daily Activities',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; is3D: true,
+&nbsp; &nbsp; &nbsp; &nbsp; };
+
+&nbsp; &nbsp; &nbsp; &nbsp; var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+&nbsp; &nbsp; &nbsp; &nbsp; chart.draw(data, options);
+&nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; &lt;/script&gt;
+&nbsp; &lt;/head&gt;
+&nbsp; &lt;body&gt;
+&nbsp; &nbsp; &lt;a style=&quot;color:#333333;&quot; href=&quot;javascript:window.parent.$axure('@InlineFrame').moveBy(0, 10, {});void(0);&quot;&gt;Update Chart&lt;/a&gt;&lt;/br&gt;
+&nbsp; &nbsp; &lt;div id=&quot;piechart_3d&quot; style=&quot;width: 600px; height: 400px;&quot;&gt;&lt;/div&gt;
+&nbsp; &lt;/body&gt;
+&lt;/html&gt;</textarea>
+          </div>
+
+          <!-- ab.Frame (Inline Frame) -->
+          <div id="u476" class="ax_default u476" data-label="ab.Frame">
+            <iframe id="u476_input" class="u476_input" data-label="ab.Frame" scrolling="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+        </script>
+        <div id="u474-1" class="" style="width: 630px; height: 470px;">
+
+          <!-- ab.Script (Text Area) -->
+          <div id="u475-1" class="ax_default example_script u475" data-label="ab.Script" style="width: 630px; height: 240px; left: 0px; top: 0px;display:none; visibility: hidden">
+            <div id="u475-1_div" class="u475_div" style="width: 630px; height: 240px;visibility: inherit"></div>
+            <textarea id="u475-1_input" class="u475_input">&lt;html&gt;
+&nbsp; &lt;head&gt;
+&nbsp; &nbsp; &lt;script type=&quot;text/javascript&quot; src=&quot;https://www.google.com/jsapi&quot;&gt;&lt;/script&gt;
+&nbsp; &nbsp; &lt;script type=&quot;text/javascript&quot;&gt;
+&nbsp; &nbsp; &nbsp; google.load(&quot;visualization&quot;, &quot;1&quot;, {packages:[&quot;corechart&quot;]});
+&nbsp; &nbsp; &nbsp; google.setOnLoadCallback(drawChart);
+&nbsp; &nbsp; &nbsp; function drawChart() {
+&nbsp; &nbsp; &nbsp; &nbsp; var data = google.visualization.arrayToDataTable([
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ['Task', 'Hours per Day'],
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ['Eat',&nbsp; &nbsp; &nbsp; 2],
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ['Commute',&nbsp; 2],
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ['Watch TV', 2],
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ['Sleep',&nbsp; &nbsp; 7]
+&nbsp; &nbsp; &nbsp; &nbsp; ]);
+
+&nbsp; &nbsp; &nbsp; &nbsp; var options = {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; title: 'My Daily Activities',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; is3D: true,
+&nbsp; &nbsp; &nbsp; &nbsp; };
+
+&nbsp; &nbsp; &nbsp; &nbsp; var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+&nbsp; &nbsp; &nbsp; &nbsp; chart.draw(data, options);
+&nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; &lt;/script&gt;
+&nbsp; &lt;/head&gt;
+&nbsp; &lt;body&gt;
+&nbsp; &nbsp; &lt;a style=&quot;color:#333333;&quot; href=&quot;javascript:window.parent.$axure('@InlineFrame').moveBy(0, 10, {});void(0);&quot;&gt;Update Chart&lt;/a&gt;&lt;/br&gt;
+&nbsp; &nbsp; &lt;div id=&quot;piechart_3d&quot; style=&quot;width: 600px; height: 400px;&quot;&gt;&lt;/div&gt;
+&nbsp; &lt;/body&gt;
+&lt;/html&gt;</textarea>
+          </div>
+
+          <!-- ab.Frame (Inline Frame) -->
+          <div id="u476-1" class="ax_default u476" data-label="ab.Frame" style="visibility: inherit">
+            <iframe id="u476-1_input" class="u476_input" data-label="ab.Frame" scrolling="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (echarts) -->
+
+      <!-- Unnamed (Group) -->
+      <div id="u478" class="ax_default" data-left="150" data-top="710" data-width="686" data-height="309">
+
+        <!-- Unnamed (Image) -->
+        <div id="u479" class="ax_default image">
+          <img id="u479_img" class="img " src="images/折线图/u240.png"/>
+          <div id="u479_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u480" class="ax_default box_1">
+          <div id="u480_div" class=""></div>
+          <div id="u480_text" class="text ">
+            <p><span style="text-decoration:none;">字段说明：</span></p><p><span style="text-decoration:none;">code：echarts代码，直接从echarts官网复制黏贴。</span></p><p><span style="text-decoration:none;">width：宽度。</span></p><p><span style="text-decoration:none;">hight：高度。</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u481" class="ax_default primary_button selected">
+          <div id="u481_div" class="selected"></div>
+          <div id="u481_text" class="text ">
+            <p><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">查看E</span><span style="font-family:'Monaco';text-decoration:none;">charts</span><span style="font-family:'PingFangSC-Regular', 'PingFang SC';text-decoration:none;">官网</span></p>
+          </div>
+        </div>
+      </div>
+      <div id="u477" style="display:none; visibility:hidden;"></div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>

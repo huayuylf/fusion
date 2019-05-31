@@ -1,0 +1,484 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>级联</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/级联/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" type="text/css" rel="stylesheet"/>
+    <style type="text/css">
+@font-face {
+//}</style>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d43011c1f3845cf186551b49c3938bd7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css">{
+}
+    </style>
+    <style type="text/css">
+@font-face {
+//}</style><script type="text/javascript">
+
+window.open = window.open;
+window.open = function () {
+  "use strict";
+  function initialize() {
+    if (window.$) {
+      $(document).ready(function () {
+       setTimeout(function () {window.open('javascript:');}, 0);
+      });
+     } else {
+      setTimeout(initialize, 0);
+     }
+  }
+  setTimeout(initialize, 0);
+  if (typeof String.prototype.trim !== "function") {
+    String.prototype.trim = function () {
+      return this.replace(/^\s+|\s+$/g, "");
+    };
+  }
+  var _open = window.open;
+  var __open = function(url, a, b, c) {
+      if (c !== undefined) return _open(url, a, b, c);
+      if (b !== undefined) return _open(url, a, b);
+      if (a !== undefined) return _open(url, a);
+      return _open(url);
+  };
+  return function (url, a, b, c) {
+    if ((url.substring(0, 11) !== "javascript:") || (!$axure)) {
+      if (window.openReplace) {
+        window.openReplace = false;
+        window.location.replace(url);
+        return false;
+      }
+      return __open(url, a, b, c);
+    }
+    if (!$axure.error) {
+      var ignoreError;
+      $axure.error = function (msg) {
+         if (console) console.log(msg);
+        if (!ignoreError) ignoreError = !confirm(msg);
+        return false;
+      };
+      $axure.internal(function ($ax) {
+        $axure.debug = $ax.globalVariableProvider.getVariableValue('Debug') !== '';
+      });
+      if (window.AxureExInitialize) window.AxureExInitialize();
+    }
+    var script = url.substring(11).trim();
+    if (false && console) console.log("** " + script + " **\n");
+    if ((script[0] === '/') && (script[1] === '/')) return false;
+    if ((script[0] == '@') || (script[0] == '#')) {
+     
+      var src = script.split(":");
+      script = $axure(src[0].trim()).text();
+      if (!script) return $axure.error('Widget "' + src[0] + '" not found.');
+      
+        var l = script.split(':');
+        script = script.replace("[[" + l[0].trim() + "]]", JSON.stringify(l.slice(1).join(':')).slice(1, -1).replace("'", "\\'"));
+     
+      if (src.length > 1) {
+        var frame = $axure(src[1].trim()).$().children("iframe")[0];
+        if (!frame) return $axure.error('Widget InlineFrame "' + src[1] + '" not found.');
+        frame = (frame.contentWindow ? frame.contentWindow : frame.contentDocument.document ? frame.contentDocument.document : frame.contentDocument).document;
+        frame.open("text/html", "replace");
+        frame.write(script);
+        frame.close();
+        return false;
+      }
+    }
+    if (script !== '') {
+      if ($axure.debug) script = eval(script);
+      else try {
+        script = eval(script);
+      } catch (err) {
+        return $axure.error("Exception:\n" + err + "\n\nTrace:\n" + err.stack + "\n\nScript:\n" + script.slice(0, 1024));
+      }
+      if (script) return __open('javascript: ' + JSON.stringify(script) + ';', a, b, c);
+    }
+    return false;
+  };
+}();
+
+//</script><style type="text/css">{
+}
+    </style>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/级联/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (Group) -->
+      <div id="u118" class="ax_default" data-left="100" data-top="100" data-width="1100" data-height="237">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u119" class="ax_default box_1">
+          <div id="u119_div" class=""></div>
+          <div id="u119_text" class="text ">
+            <p><span style="text-decoration:none;">组件示例</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u120" class="ax_default box_1">
+          <div id="u120_div" class=""></div>
+          <div id="u120_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u121" class="ax_default" data-left="100" data-top="151" data-width="280" data-height="50">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u122" class="ax_default _默认样式">
+          <div id="u122_div" class=""></div>
+          <div id="u122_text" class="text ">
+            <p><span style="text-decoration:none;">地区选择:</span></p>
+          </div>
+        </div>
+
+        <!-- 输入框 (Text Field) -->
+        <div id="u123" class="ax_default text_field" data-label="输入框">
+          <div id="u123_div" class=""></div>
+          <input id="u123_input" type="text" value="" class="u123_input"/>
+        </div>
+
+        <!-- 最外层 (Dynamic Panel) -->
+        <div id="u124" class="ax_default ax_default_hidden" data-label="最外层" style="display:none; visibility: hidden">
+          <div id="u124_state0" class="panel_state" data-label="State1" style="">
+            <div id="u124_state0_content" class="panel_state_content">
+
+              <!-- Unnamed (Dynamic Panel) -->
+              <div id="u125" class="ax_default">
+                <div id="u125_state0" class="panel_state" data-label="State1" style="">
+                  <div id="u125_state0_content" class="panel_state_content">
+
+                    <!-- 一级 (Repeater) -->
+                    <div id="u126" class="ax_default" data-label="一级">
+                      <script id="u126_script" type="axure-repeater-template" data-label="一级">
+
+                        <!-- Unnamed (Group) -->
+                        <div id="u127" class="ax_default u127" selectiongroup="一级项选中" data-left="0" data-top="0" data-width="138" data-height="35">
+
+                          <!-- Unnamed (Rectangle) -->
+                          <div id="u128" class="ax_default box_1 selected u128">
+                            <div id="u128_div" class="u128_div selected"></div>
+                            <div id="u128_text" class="text u128_text" style="display:none; visibility: hidden">
+                              <p></p>
+                            </div>
+                          </div>
+
+                          <!-- Unnamed (Rectangle) -->
+                          <div id="u129" class="ax_default box_1 selected u129">
+                            <div id="u129_div" class="u129_div selected"></div>
+                            <div id="u129_text" class="text u129_text">
+                              <p><span style="text-decoration:none;"></span></p>
+                            </div>
+                          </div>
+                        </div>
+                      </script>
+                      <div id="u126-1" class="preeval" style="width: 138px; height: 35px;">
+
+                        <!-- Unnamed (Group) -->
+                        <div id="u127-1" class="ax_default selected u127" selectiongroup="一级项选中" style="visibility: inherit" data-left="0" data-top="0" data-width="138" data-height="35">
+
+                          <!-- Unnamed (Rectangle) -->
+                          <div id="u128-1" class="ax_default box_1 selected u128" style="width: 111px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                            <div id="u128-1_div" class="u128_div selected" style="width: 111px; height: 35px;visibility: inherit"></div>
+                            <div id="u128-1_text" class="text u128_text" style="visibility: inherit">
+                              <p><span style="text-decoration:none;">浙江</span></p>
+                            </div>
+                          </div>
+
+                          <!-- Unnamed (Rectangle) -->
+                          <div id="u129-1" class="ax_default box_1 selected u129" style="width: 27px; height: 35px; left: 111px; top: 0px;visibility: inherit">
+                            <div id="u129-1_div" class="u129_div selected" style="width: 27px; height: 35px;visibility: inherit"></div>
+                            <div id="u129-1_text" class="text u129_text" style="visibility: inherit">
+                              <p><span style="text-decoration:none;"></span></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="u126-2" class="preeval" style="width: 138px; height: 35px;">
+
+                        <!-- Unnamed (Group) -->
+                        <div id="u127-2" class="ax_default selected u127" selectiongroup="一级项选中" style="visibility: inherit" data-left="0" data-top="0" data-width="138" data-height="35">
+
+                          <!-- Unnamed (Rectangle) -->
+                          <div id="u128-2" class="ax_default box_1 selected u128" style="width: 111px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                            <div id="u128-2_div" class="u128_div selected" style="width: 111px; height: 35px;visibility: inherit"></div>
+                            <div id="u128-2_text" class="text u128_text" style="visibility: inherit">
+                              <p><span style="text-decoration:none;">江苏</span></p>
+                            </div>
+                          </div>
+
+                          <!-- Unnamed (Rectangle) -->
+                          <div id="u129-2" class="ax_default box_1 selected u129" style="width: 27px; height: 35px; left: 111px; top: 0px;visibility: inherit">
+                            <div id="u129-2_div" class="u129_div selected" style="width: 27px; height: 35px;visibility: inherit"></div>
+                            <div id="u129-2_text" class="text u129_text" style="visibility: inherit">
+                              <p><span style="text-decoration:none;"></span></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="u126-3" class="preeval" style="width: 138px; height: 35px;">
+
+                        <!-- Unnamed (Group) -->
+                        <div id="u127-3" class="ax_default selected u127" selectiongroup="一级项选中" style="visibility: inherit" data-left="0" data-top="0" data-width="138" data-height="35">
+
+                          <!-- Unnamed (Rectangle) -->
+                          <div id="u128-3" class="ax_default box_1 selected u128" style="width: 111px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                            <div id="u128-3_div" class="u128_div selected" style="width: 111px; height: 35px;visibility: inherit"></div>
+                            <div id="u128-3_text" class="text u128_text" style="visibility: inherit">
+                              <p><span style="text-decoration:none;">上海</span></p>
+                            </div>
+                          </div>
+
+                          <!-- Unnamed (Rectangle) -->
+                          <div id="u129-3" class="ax_default box_1 selected u129" style="width: 27px; height: 35px; left: 111px; top: 0px;visibility: inherit">
+                            <div id="u129-3_div" class="u129_div selected" style="width: 27px; height: 35px;visibility: inherit"></div>
+                            <div id="u129-3_text" class="text u129_text" style="visibility: inherit">
+                              <p><span style="text-decoration:none;"></span></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Unnamed (Dynamic Panel) -->
+              <div id="u130" class="ax_default">
+                <div id="u130_state0" class="panel_state" data-label="State1" style="">
+                  <div id="u130_state0_content" class="panel_state_content">
+
+                    <!-- 二级 (Repeater) -->
+                    <div id="u131" class="ax_default" data-label="二级">
+                      <script id="u131_script" type="axure-repeater-template" data-label="二级">
+
+                        <!-- Unnamed (Rectangle) -->
+                        <div id="u132" class="ax_default box_1 u132">
+                          <div id="u132_div" class="u132_div"></div>
+                          <div id="u132_text" class="text u132_text" style="display:none; visibility: hidden">
+                            <p></p>
+                          </div>
+                        </div>
+                      </script>
+                      <div id="u131-1" class="preeval" style="width: 140px; height: 35px;">
+
+                        <!-- Unnamed (Rectangle) -->
+                        <div id="u132-1" class="ax_default box_1 u132" style="width: 140px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u132-1_div" class="u132_div" style="width: 140px; height: 35px;visibility: inherit"></div>
+                          <div id="u132-1_text" class="text u132_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">杭州</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="u131-2" class="preeval" style="width: 140px; height: 35px;">
+
+                        <!-- Unnamed (Rectangle) -->
+                        <div id="u132-2" class="ax_default box_1 u132" style="width: 140px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u132-2_div" class="u132_div" style="width: 140px; height: 35px;visibility: inherit"></div>
+                          <div id="u132-2_text" class="text u132_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">宁波</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="u131-3" class="preeval" style="width: 140px; height: 35px;">
+
+                        <!-- Unnamed (Rectangle) -->
+                        <div id="u132-3" class="ax_default box_1 u132" style="width: 140px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u132-3_div" class="u132_div" style="width: 140px; height: 35px;visibility: inherit"></div>
+                          <div id="u132-3_text" class="text u132_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">绍兴</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="u131-4" class="preeval" style="width: 140px; height: 35px;">
+
+                        <!-- Unnamed (Rectangle) -->
+                        <div id="u132-4" class="ax_default box_1 u132" style="width: 140px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u132-4_div" class="u132_div" style="width: 140px; height: 35px;visibility: inherit"></div>
+                          <div id="u132-4_text" class="text u132_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">丽水</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="u131-5" class="preeval" style="width: 140px; height: 35px;">
+
+                        <!-- Unnamed (Rectangle) -->
+                        <div id="u132-5" class="ax_default box_1 u132" style="width: 140px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u132-5_div" class="u132_div" style="width: 140px; height: 35px;visibility: inherit"></div>
+                          <div id="u132-5_text" class="text u132_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">南京</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="u131-6" class="preeval" style="width: 140px; height: 35px;">
+
+                        <!-- Unnamed (Rectangle) -->
+                        <div id="u132-6" class="ax_default box_1 u132" style="width: 140px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u132-6_div" class="u132_div" style="width: 140px; height: 35px;visibility: inherit"></div>
+                          <div id="u132-6_text" class="text u132_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">苏州</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="u131-7" class="preeval" style="width: 140px; height: 35px;">
+
+                        <!-- Unnamed (Rectangle) -->
+                        <div id="u132-7" class="ax_default box_1 u132" style="width: 140px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u132-7_div" class="u132_div" style="width: 140px; height: 35px;visibility: inherit"></div>
+                          <div id="u132-7_text" class="text u132_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">闵行区</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="u131-8" class="preeval" style="width: 140px; height: 35px;">
+
+                        <!-- Unnamed (Rectangle) -->
+                        <div id="u132-8" class="ax_default box_1 u132" style="width: 140px; height: 35px; left: 0px; top: 0px;visibility: inherit">
+                          <div id="u132-8_div" class="u132_div" style="width: 140px; height: 35px;visibility: inherit"></div>
+                          <div id="u132-8_text" class="text u132_text" style="visibility: inherit">
+                            <p><span style="text-decoration:none;">黄浦区</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Unnamed (Triangle) -->
+              <div id="u133" class="ax_default _流程形状">
+                <img id="u133_img" class="img " src="images/级联/u133.svg"/>
+                <div id="u133_text" class="text " style="display:none; visibility: hidden">
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u134" class="ax_default" data-left="100" data-top="399" data-width="1100" data-height="953">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u135" class="ax_default box_1">
+          <div id="u135_div" class=""></div>
+          <div id="u135_text" class="text ">
+            <p><span style="text-decoration:none;">基本用法</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u136" class="ax_default box_1">
+          <div id="u136_div" class=""></div>
+          <div id="u136_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u137" class="ax_default image">
+        <img id="u137_img" class="img " src="images/级联/u137.png"/>
+        <div id="u137_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u138" class="ax_default box_1">
+        <div id="u138_div" class=""></div>
+        <div id="u138_text" class="text ">
+          <p><span style="text-decoration:none;">第一步：</span></p><p><span style="text-decoration:none;">设置一级菜单。</span></p><p><span style="text-decoration:none;">value：一级菜单项的名称</span></p><p><span style="text-decoration:none;">id：每个一级项对应的id，关联后续的二级菜单id</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u139" class="ax_default image">
+        <img id="u139_img" class="img " src="images/级联/u139.png"/>
+        <div id="u139_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u140" class="ax_default box_1">
+        <div id="u140_div" class=""></div>
+        <div id="u140_text" class="text ">
+          <p><span style="text-decoration:none;">第二步：</span></p><p><span style="text-decoration:none;">设置二级菜单。</span></p><p><span style="text-decoration:none;">value：二级菜单项的名称</span></p><p><span style="text-decoration:none;">fid：每个一级项对应的id，也就是该二级菜单的父id。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (面包屑标题) -->
+
+      <!-- Unnamed (Dynamic Panel) -->
+      <div id="u142" class="ax_default">
+        <div id="u142_state0" class="panel_state" data-label="State1" style="">
+          <div id="u142_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u143" class="ax_default box_1">
+              <div id="u143_div" class=""></div>
+              <div id="u143_text" class="text ">
+                <p><span style="text-decoration:none;">标题名称</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="u141" style="display:none; visibility:hidden;"></div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>

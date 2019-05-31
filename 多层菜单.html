@@ -1,0 +1,582 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>多层菜单</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/多层菜单/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" type="text/css" rel="stylesheet"/>
+    <style type="text/css">
+@font-face {
+//}</style>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d43011c1f3845cf186551b49c3938bd7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style type="text/css">{
+}
+    </style>
+    <style type="text/css">
+@font-face {
+//}</style><script type="text/javascript">
+
+window.open = window.open;
+window.open = function () {
+  "use strict";
+  function initialize() {
+    if (window.$) {
+      $(document).ready(function () {
+       setTimeout(function () {window.open('javascript:');}, 0);
+      });
+     } else {
+      setTimeout(initialize, 0);
+     }
+  }
+  setTimeout(initialize, 0);
+  if (typeof String.prototype.trim !== "function") {
+    String.prototype.trim = function () {
+      return this.replace(/^\s+|\s+$/g, "");
+    };
+  }
+  var _open = window.open;
+  var __open = function(url, a, b, c) {
+      if (c !== undefined) return _open(url, a, b, c);
+      if (b !== undefined) return _open(url, a, b);
+      if (a !== undefined) return _open(url, a);
+      return _open(url);
+  };
+  return function (url, a, b, c) {
+    if ((url.substring(0, 11) !== "javascript:") || (!$axure)) {
+      if (window.openReplace) {
+        window.openReplace = false;
+        window.location.replace(url);
+        return false;
+      }
+      return __open(url, a, b, c);
+    }
+    if (!$axure.error) {
+      var ignoreError;
+      $axure.error = function (msg) {
+         if (console) console.log(msg);
+        if (!ignoreError) ignoreError = !confirm(msg);
+        return false;
+      };
+      $axure.internal(function ($ax) {
+        $axure.debug = $ax.globalVariableProvider.getVariableValue('Debug') !== '';
+      });
+      if (window.AxureExInitialize) window.AxureExInitialize();
+    }
+    var script = url.substring(11).trim();
+    if (false && console) console.log("** " + script + " **\n");
+    if ((script[0] === '/') && (script[1] === '/')) return false;
+    if ((script[0] == '@') || (script[0] == '#')) {
+     
+      var src = script.split(":");
+      script = $axure(src[0].trim()).text();
+      if (!script) return $axure.error('Widget "' + src[0] + '" not found.');
+      
+        var l = script.split(':');
+        script = script.replace("[[" + l[0].trim() + "]]", JSON.stringify(l.slice(1).join(':')).slice(1, -1).replace("'", "\\'"));
+     
+      if (src.length > 1) {
+        var frame = $axure(src[1].trim()).$().children("iframe")[0];
+        if (!frame) return $axure.error('Widget InlineFrame "' + src[1] + '" not found.');
+        frame = (frame.contentWindow ? frame.contentWindow : frame.contentDocument.document ? frame.contentDocument.document : frame.contentDocument).document;
+        frame.open("text/html", "replace");
+        frame.write(script);
+        frame.close();
+        return false;
+      }
+    }
+    if (script !== '') {
+      if ($axure.debug) script = eval(script);
+      else try {
+        script = eval(script);
+      } catch (err) {
+        return $axure.error("Exception:\n" + err + "\n\nTrace:\n" + err.stack + "\n\nScript:\n" + script.slice(0, 1024));
+      }
+      if (script) return __open('javascript: ' + JSON.stringify(script) + ';', a, b, c);
+    }
+    return false;
+  };
+}();
+
+//</script><style type="text/css">{
+}
+    </style>
+    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+    <script src="data/document.js"></script>
+    <script src="files/多层菜单/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (Group) -->
+      <div id="u29" class="ax_default" data-left="350" data-top="556" data-width="850" data-height="1593">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u30" class="ax_default box_1">
+          <div id="u30_div" class=""></div>
+          <div id="u30_text" class="text ">
+            <p><span style="text-decoration:none;">特殊用法</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u31" class="ax_default box_1">
+          <div id="u31_div" class=""></div>
+          <div id="u31_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u32" class="ax_default" data-left="100" data-top="100" data-width="200" data-height="384">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u33" class="ax_default box_1">
+          <div id="u33_div" class=""></div>
+          <div id="u33_text" class="text ">
+            <p><span style="text-decoration:none;">组件样式-1</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u34" class="ax_default box_1">
+          <div id="u34_div" class=""></div>
+          <div id="u34_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u35" class="ax_default" data-left="100" data-top="168" data-width="200" data-height="112">
+
+        <!-- 二级菜单组合 (Group) -->
+        <div id="u36" class="ax_default" data-label="二级菜单组合" data-left="100" data-top="168" data-width="200" data-height="40">
+
+          <!-- 二级菜单 (Rectangle) -->
+          <div id="u37" class="ax_default box_2" data-label="二级菜单">
+            <div id="u37_div" class=""></div>
+            <div id="u37_text" class="text ">
+              <p><span style="text-decoration:none;">专项管理</span></p>
+            </div>
+          </div>
+
+          <!-- 方向 (Rectangle) -->
+          <div id="u38" class="ax_default box_2" data-label="方向">
+            <div id="u38_div" class=""></div>
+            <div id="u38_text" class="text ">
+              <p><span style="text-decoration:none;"></span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u39" class="ax_default box_2">
+            <div id="u39_div" class=""></div>
+            <div id="u39_text" class="text ">
+              <p><span style="text-decoration:none;"></span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 三级菜单组 (Repeater) -->
+        <div id="u40" class="ax_default" data-label="三级菜单组">
+          <script id="u40_script" type="axure-repeater-template" data-label="三级菜单组">
+
+            <!-- 三级菜单 (Group) -->
+            <div id="u41" class="ax_default u41" data-label="三级菜单" selectiongroup="三级菜单组" data-left="0" data-top="0" data-width="200" data-height="36">
+
+              <!-- 三级菜单 (Rectangle) -->
+              <div id="u42" class="ax_default box_2 u42" data-label="三级菜单">
+                <div id="u42_div" class="u42_div"></div>
+                <div id="u42_text" class="text u42_text">
+                  <p><span style="text-decoration:none;">订单总览</span></p>
+                </div>
+              </div>
+            </div>
+          </script>
+          <div id="u40-1" class="preeval" style="width: 200px; height: 36px;">
+
+            <!-- 三级菜单 (Group) -->
+            <div id="u41-1" class="ax_default u41" data-label="三级菜单" selectiongroup="三级菜单组" style="visibility: inherit" data-left="0" data-top="0" data-width="200" data-height="36">
+
+              <!-- 三级菜单 (Rectangle) -->
+              <div id="u42-1" class="ax_default box_2 u42" data-label="三级菜单" style="width: 200px; height: 36px; left: 0px; top: 0px;visibility: inherit">
+                <div id="u42-1_div" class="u42_div" style="width: 200px; height: 36px;visibility: inherit"></div>
+                <div id="u42-1_text" class="text u42_text" style="visibility: inherit">
+                  <p><span style="text-decoration:none;">成本管理</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="u40-2" class="preeval" style="width: 200px; height: 36px;">
+
+            <!-- 三级菜单 (Group) -->
+            <div id="u41-2" class="ax_default u41" data-label="三级菜单" selectiongroup="三级菜单组" style="visibility: inherit" data-left="0" data-top="0" data-width="200" data-height="36">
+
+              <!-- 三级菜单 (Rectangle) -->
+              <div id="u42-2" class="ax_default box_2 u42" data-label="三级菜单" style="width: 200px; height: 36px; left: 0px; top: 0px;visibility: inherit">
+                <div id="u42-2_div" class="u42_div" style="width: 200px; height: 36px;visibility: inherit"></div>
+                <div id="u42-2_text" class="text u42_text" style="visibility: inherit">
+                  <p><span style="text-decoration:none;">质量管理</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u43" class="ax_default" data-left="100" data-top="280" data-width="200" data-height="40">
+
+        <!-- 二级菜单组合 (Group) -->
+        <div id="u44" class="ax_default" data-label="二级菜单组合" data-left="100" data-top="280" data-width="200" data-height="40">
+
+          <!-- 二级菜单 (Rectangle) -->
+          <div id="u45" class="ax_default box_2" data-label="二级菜单">
+            <div id="u45_div" class=""></div>
+            <div id="u45_text" class="text ">
+              <p><span style="text-decoration:none;">专项管理</span></p>
+            </div>
+          </div>
+
+          <!-- 方向 (Rectangle) -->
+          <div id="u46" class="ax_default box_2" data-label="方向">
+            <div id="u46_div" class=""></div>
+            <div id="u46_text" class="text ">
+              <p><span style="text-decoration:none;"></span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u47" class="ax_default box_2">
+            <div id="u47_div" class=""></div>
+            <div id="u47_text" class="text ">
+              <p><span style="text-decoration:none;"></span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 三级菜单组 (Repeater) -->
+        <div id="u48" class="ax_default ax_default_hidden" data-label="三级菜单组" style="display:none; visibility: hidden">
+          <script id="u48_script" type="axure-repeater-template" data-label="三级菜单组">
+
+            <!-- 三级菜单 (Group) -->
+            <div id="u49" class="ax_default u49" data-label="三级菜单" selectiongroup="三级菜单组" data-left="0" data-top="0" data-width="200" data-height="36">
+
+              <!-- 三级菜单 (Rectangle) -->
+              <div id="u50" class="ax_default box_2 u50" data-label="三级菜单">
+                <div id="u50_div" class="u50_div"></div>
+                <div id="u50_text" class="text u50_text">
+                  <p><span style="text-decoration:none;">订单总览</span></p>
+                </div>
+              </div>
+            </div>
+          </script>
+          <div id="u48-1" class="preeval" style="width: 200px; height: 36px;">
+
+            <!-- 三级菜单 (Group) -->
+            <div id="u49-1" class="ax_default u49" data-label="三级菜单" selectiongroup="三级菜单组" style="visibility: inherit" data-left="0" data-top="0" data-width="200" data-height="36">
+
+              <!-- 三级菜单 (Rectangle) -->
+              <div id="u50-1" class="ax_default box_2 u50" data-label="三级菜单" style="width: 200px; height: 36px; left: 0px; top: 0px;visibility: inherit">
+                <div id="u50-1_div" class="u50_div" style="width: 200px; height: 36px;visibility: inherit"></div>
+                <div id="u50-1_text" class="text u50_text" style="visibility: inherit">
+                  <p><span style="text-decoration:none;">成本管理</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="u48-2" class="preeval" style="width: 200px; height: 36px;">
+
+            <!-- 三级菜单 (Group) -->
+            <div id="u49-2" class="ax_default u49" data-label="三级菜单" selectiongroup="三级菜单组" style="visibility: inherit" data-left="0" data-top="0" data-width="200" data-height="36">
+
+              <!-- 三级菜单 (Rectangle) -->
+              <div id="u50-2" class="ax_default box_2 u50" data-label="三级菜单" style="width: 200px; height: 36px; left: 0px; top: 0px;visibility: inherit">
+                <div id="u50-2_div" class="u50_div" style="width: 200px; height: 36px;visibility: inherit"></div>
+                <div id="u50-2_text" class="text u50_text" style="visibility: inherit">
+                  <p><span style="text-decoration:none;">质量管理</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u51" class="ax_default" data-left="350" data-top="100" data-width="850" data-height="435">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u52" class="ax_default box_1">
+          <div id="u52_div" class=""></div>
+          <div id="u52_text" class="text ">
+            <p><span style="text-decoration:none;">基本用法</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u53" class="ax_default box_1">
+          <div id="u53_div" class=""></div>
+          <div id="u53_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u54" class="ax_default image">
+        <img id="u54_img" class="img " src="images/多层菜单/u54.png"/>
+        <div id="u54_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u55" class="ax_default box_1">
+        <div id="u55_div" class=""></div>
+        <div id="u55_text" class="text ">
+          <p><span style="text-decoration:none;">组件说明</span></p><p><span style="text-decoration:none;"><br></span></p><p><span style="text-decoration:none;">1、拖动该元件到对应的页面中。</span></p><p><span style="text-decoration:none;"><br></span></p><p><span style="text-decoration:none;">2、选中子菜单的中继器</span></p><p><span style="text-decoration:none;"><br></span></p><p><span style="text-decoration:none;">3、在中继器设置数据框内，【menuname】输入你要的子菜单名称（子菜单名称和页面名称一致，确保该菜单可以链接打开正确的页面）。</span></p><p><span style="text-decoration:none;"><br></span></p><p><span style="text-decoration:none;">4、如果子菜单名称和页面名称不一致的，在【pageurl】字段导入需要链接打开的页面。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u56" class="ax_default image">
+        <img id="u56_img" class="img " src="images/多层菜单/u56.png"/>
+        <div id="u56_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u57" class="ax_default image">
+        <img id="u57_img" class="img " src="images/多层菜单/u57.png"/>
+        <div id="u57_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u58" class="ax_default image">
+        <img id="u58_img" class="img " src="images/多层菜单/u58.png"/>
+        <div id="u58_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u59" class="ax_default box_1">
+        <div id="u59_div" class=""></div>
+        <div id="u59_text" class="text ">
+          <p><span style="text-decoration:none;">第一步：【pageurl】列右键，导入页面</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u60" class="ax_default box_1">
+        <div id="u60_div" class=""></div>
+        <div id="u60_text" class="text ">
+          <p><span style="text-decoration:none;">第二步：选中需要导入的页面</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u61" class="ax_default box_1">
+        <div id="u61_div" class=""></div>
+        <div id="u61_text" class="text ">
+          <p><span style="text-decoration:none;">第三步：完成！</span></p><p><span style="text-decoration:none;"><br></span></p><p><span style="text-decoration:none;">这样子子菜单自动链接到“菜单22”这个页面</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u62" class="ax_default" data-left="100" data-top="534" data-width="200" data-height="384">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u63" class="ax_default box_1">
+          <div id="u63_div" class=""></div>
+          <div id="u63_text" class="text ">
+            <p><span style="text-decoration:none;">组件样式-2</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u64" class="ax_default box_1">
+          <div id="u64_div" class=""></div>
+          <div id="u64_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u65" class="ax_default" data-left="100" data-top="605" data-width="200" data-height="184">
+
+        <!-- 二级菜单组合 (Group) -->
+        <div id="u66" class="ax_default" data-label="二级菜单组合" data-left="100" data-top="605" data-width="200" data-height="40">
+
+          <!-- 二级菜单 (Rectangle) -->
+          <div id="u67" class="ax_default box_2" data-label="二级菜单">
+            <div id="u67_div" class=""></div>
+            <div id="u67_text" class="text ">
+              <p><span style="text-decoration:none;">商品订单</span></p>
+            </div>
+          </div>
+
+          <!-- 方向 (Rectangle) -->
+          <div id="u68" class="ax_default box_2" data-label="方向">
+            <div id="u68_div" class=""></div>
+            <div id="u68_text" class="text ">
+              <p><span style="text-decoration:none;"></span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u69" class="ax_default box_2">
+            <div id="u69_div" class=""></div>
+            <div id="u69_text" class="text ">
+              <p><span style="text-decoration:none;"></span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 三级菜单组 (Repeater) -->
+        <div id="u70" class="ax_default" data-label="三级菜单组">
+          <script id="u70_script" type="axure-repeater-template" data-label="三级菜单组">
+
+            <!-- 三级菜单文本 (Group) -->
+            <div id="u71" class="ax_default u71" data-label="三级菜单文本" selectiongroup="三级菜单组" data-left="0" data-top="0" data-width="200" data-height="36">
+
+              <!-- 三级菜单 (Rectangle) -->
+              <div id="u72" class="ax_default box_2 u72" data-label="三级菜单">
+                <div id="u72_div" class="u72_div"></div>
+                <div id="u72_text" class="text u72_text">
+                  <p><span style="text-decoration:none;">订单总览</span></p>
+                </div>
+              </div>
+            </div>
+          </script>
+          <div id="u70-1" class="preeval" style="width: 200px; height: 36px;">
+
+            <!-- 三级菜单文本 (Group) -->
+            <div id="u71-1" class="ax_default u71" data-label="三级菜单文本" selectiongroup="三级菜单组" style="visibility: inherit" data-left="0" data-top="0" data-width="200" data-height="36">
+
+              <!-- 三级菜单 (Rectangle) -->
+              <div id="u72-1" class="ax_default box_2 u72" data-label="三级菜单" style="width: 200px; height: 36px; left: 0px; top: 0px;visibility: inherit">
+                <div id="u72-1_div" class="u72_div" style="width: 200px; height: 36px;visibility: inherit"></div>
+                <div id="u72-1_text" class="text u72_text" style="visibility: inherit">
+                  <p><span style="text-decoration:none;">支付订单</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="u70-2" class="preeval" style="width: 200px; height: 36px;">
+
+            <!-- 三级菜单文本 (Group) -->
+            <div id="u71-2" class="ax_default u71" data-label="三级菜单文本" selectiongroup="三级菜单组" style="visibility: inherit" data-left="0" data-top="0" data-width="200" data-height="36">
+
+              <!-- 三级菜单 (Rectangle) -->
+              <div id="u72-2" class="ax_default box_2 u72" data-label="三级菜单" style="width: 200px; height: 36px; left: 0px; top: 0px;visibility: inherit">
+                <div id="u72-2_div" class="u72_div" style="width: 200px; height: 36px;visibility: inherit"></div>
+                <div id="u72-2_text" class="text u72_text" style="visibility: inherit">
+                  <p><span style="text-decoration:none;">提现订单</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="u70-3" class="preeval" style="width: 200px; height: 36px;">
+
+            <!-- 三级菜单文本 (Group) -->
+            <div id="u71-3" class="ax_default u71" data-label="三级菜单文本" selectiongroup="三级菜单组" style="visibility: inherit" data-left="0" data-top="0" data-width="200" data-height="36">
+
+              <!-- 三级菜单 (Rectangle) -->
+              <div id="u72-3" class="ax_default box_2 u72" data-label="三级菜单" style="width: 200px; height: 36px; left: 0px; top: 0px;visibility: inherit">
+                <div id="u72-3_div" class="u72_div" style="width: 200px; height: 36px;visibility: inherit"></div>
+                <div id="u72-3_text" class="text u72_text" style="visibility: inherit">
+                  <p><span style="text-decoration:none;">购买订单</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="u70-4" class="preeval" style="width: 200px; height: 36px;">
+
+            <!-- 三级菜单文本 (Group) -->
+            <div id="u71-4" class="ax_default u71" data-label="三级菜单文本" selectiongroup="三级菜单组" style="visibility: inherit" data-left="0" data-top="0" data-width="200" data-height="36">
+
+              <!-- 三级菜单 (Rectangle) -->
+              <div id="u72-4" class="ax_default box_2 u72" data-label="三级菜单" style="width: 200px; height: 36px; left: 0px; top: 0px;visibility: inherit">
+                <div id="u72-4_div" class="u72_div" style="width: 200px; height: 36px;visibility: inherit"></div>
+                <div id="u72-4_text" class="text u72_text" style="visibility: inherit">
+                  <p><span style="text-decoration:none;">出售订单</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (面包屑标题) -->
+
+      <!-- Unnamed (Dynamic Panel) -->
+      <div id="u74" class="ax_default">
+        <div id="u74_state0" class="panel_state" data-label="State1" style="">
+          <div id="u74_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u75" class="ax_default box_1">
+              <div id="u75_div" class=""></div>
+              <div id="u75_text" class="text ">
+                <p><span style="text-decoration:none;">标题名称</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="u73" style="display:none; visibility:hidden;"></div>
+    </div>
+    <script src="resources/scripts/axure/ios.js"></script>
+  </body>
+</html>
