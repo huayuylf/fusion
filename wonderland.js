@@ -261,7 +261,7 @@
         },
         "categoryAxis": {
             "axisLine": {
-                "show": true,
+                "show": false,
                 "lineStyle": {
                     "color": "#cccccc"
                 }
@@ -298,7 +298,7 @@
         },
         "valueAxis": {
             "axisLine": {
-                "show": true,
+                "show": false,
                 "lineStyle": {
                     "color": "#cccccc"
                 }
