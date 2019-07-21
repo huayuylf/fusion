@@ -316,7 +316,7 @@
                 }
             },
             "splitLine": {
-                "show": true,
+                "show": false,
                 "lineStyle": {
                     "color": [
                         "#eeeeee"
