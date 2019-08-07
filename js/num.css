@@ -199,7 +199,7 @@ body {
 }
 .dataStatistics .digit>div.digit_bottom .digit_wrap, .dataStatistics .digit>div.shadow_bottom .digit_wrap {
     display:block;
-    margin-top:5%
+    margin-top:-95%
 }
 .dataStatistics .digit>div.digit_bottom:before, .dataStatistics .digit>div.shadow_bottom:before {
     content:"";
