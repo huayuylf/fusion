@@ -38,38 +38,7 @@ img {
 body {
     background:#152442
 }
-.tj_top {
-    width:457px;
-    height:77px;
-    margin:0 auto;
-    background:url(images/tj_top.png) no-repeat center top;
-    position:relative;
-    z-index:2
-}
-.tj_tit {
-    width:821px;
-    height:105px;
-    background:url(images/tj_tit.png) no-repeat center top;
-    margin:63px auto 42px;
-    position:relative;
-    z-index:2
-}
-.tj_foot {
-    width:100%;
-    height:900px;
-    position:fixed;
-    left:0;
-    bottom:0;
-    background:url(images/foot.jpg) no-repeat center bottom
-}
-.tj_map {
-    width:593px;
-    height:358px;
-    background:url(images/map.png) no-repeat center top;
-    position:relative;
-    z-index:2;
-    margin:50px auto 0
-}
+
 .nums_txt {
     position:absolute;
     color:#423424;
